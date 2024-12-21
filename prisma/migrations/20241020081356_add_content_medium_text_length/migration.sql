@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `Blog` MODIFY `content` MEDIUMTEXT NOT NULL;
