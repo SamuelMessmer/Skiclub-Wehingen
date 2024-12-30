@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 import React, { useEffect, useState } from "react";
 
 const NewsletterCards: React.FC = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [windowWidth, setWindowWidth] = useState<number>(0); // Set initial width to 0
 
@@ -17,7 +17,7 @@ const NewsletterCards: React.FC = () => {
       setBlogs(data);
 
       if (!data)
-        setLoading(false);
+        setLoading(true);
 
     } catch (error) {
       console.error("Error fetching blogs:", error);
