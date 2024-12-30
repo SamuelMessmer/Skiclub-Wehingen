@@ -42,7 +42,7 @@ const NewsletterCards: React.FC = () => {
 
   return (
     <div>
-      {loading ? <div>
+      {loading ? <div className="flex items-center justify-center">
         <p>Blogeinträge werden geladen...</p>
         <Button
           onClick={() => {
