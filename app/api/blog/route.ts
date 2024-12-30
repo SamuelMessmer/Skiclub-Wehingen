@@ -22,6 +22,9 @@ export async function POST(request: NextRequest) {
   const date = new Date(timestamp);
   const datumdb = date.toLocaleDateString();
 
+  if (body.img == null)
+    return NextResponse.json({ message: "Bild wird nicht korrekt hochgeladen" }, { status: 400 });
+
   if (!validation.success)
     return NextResponse.json(validation.error.errors, { status: 400 });
 

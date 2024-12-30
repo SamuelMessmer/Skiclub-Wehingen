@@ -34,7 +34,7 @@ const CreateBlog = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const awsUrl = await handleImageUpload(); //handleImageUpload returns awsUrl als string 
+    const awsUrl = await handleImageUpload(); //handleImageUpload returns awsUrl als string   
 
     const blogData = {
       title,
@@ -52,7 +52,7 @@ const CreateBlog = () => {
 
     if (!response.ok) {
       const errorData = await response.json();
-      setError("Fehler beim Speichern: " + JSON.stringify(errorData));
+      setError("Fehler beim Speichern: " + error + JSON.stringify(errorData));
       console.log(error);
     } else {
       setSuccess("Blog erfolgreich erstellt!");
