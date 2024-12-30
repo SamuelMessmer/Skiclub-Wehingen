@@ -1,0 +1,33 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main # Ausführen bei Pushes in den "main"-Branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Repository auschecken
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # SSH-Key in den Agent laden
+      - name: Install SSH Key
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      # Server zur Liste der bekannten Hosts hinzufügen
+      - name: Add server to known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H 193.22.146.48 >> ~/.ssh/known_hosts
+
+      # Deployment-Befehl ausführen
+      # Muss ein Befehl sein weil die befehle sonst zu schnell für den Server ausgeführt werden
+      - name: Deploy to VPS
+        run: |
+          ssh webadmin@193.22.146.48 "zsh -l -c 'source ~/.nvm/nvm.sh && nvm use 22.11.0 && cd .. && cd .. && cd .. && cd /var/w/n/Skiclub-Wehingen && git pull origin main && npm install && npm run build && pm2 stop skiclub-wehingen && pm2 delete skiclub-wehingen && pm2 start npm --name \"skiclub-wehingen\" -- start && pm2 save'"
