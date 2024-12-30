@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 import React, { useEffect, useState } from "react";
 
 const NewsletterCards: React.FC = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [windowWidth, setWindowWidth] = useState<number>(0); // Set initial width to 0
 
@@ -42,15 +42,15 @@ const NewsletterCards: React.FC = () => {
 
   return (
     <div>
-      {loading ? <div className="flex items-center justify-center text-white m-8">
-        <p>Blogeinträge werden geladen...</p>
+      {loading ? <div className="flex gap-8 items-center justify-center text-white m-8">
+        <p>Blogeinträge konnten nicht geladen werden...</p>
         <Button
           onClick={() => {
             location.reload()
           }}
-          className="bg-white  hover:bg-gray-100 shadow-md">
+          className="bg-white  hover:scale-105 duration-300 hover:bg-slate-50 shadow-md">
           <span className="font-bold text-black shadow-sm">
-            Erneut laden
+            Erneut versuchen!
           </span>
         </Button>
       </div>

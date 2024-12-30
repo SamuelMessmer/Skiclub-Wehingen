@@ -92,13 +92,6 @@ export default function Home() {
                   Der Parkplatz des Skilifts befindet sich in der zweiten Kurve
                   der Wehingersteige
                 </CardContent>
-                {/* <Image
-                  src="/skifahrer.jpeg"
-                  alt="skifahrer blau"
-                  width={300}
-                  height={270}
-                  className="hidden 2xl:block absolute -z-10 ml-96 mt-2 w-56 object-cover"
-                /> */}
                 <CardContent className="font-bold text-lg text-orange-500">
                   Öffnungszeiten:
                 </CardContent>

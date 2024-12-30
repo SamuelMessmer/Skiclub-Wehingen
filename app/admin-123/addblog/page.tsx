@@ -16,6 +16,10 @@ const CreateBlog = () => {
     const formData = new FormData();
     formData.append("image", file!);
 
+    formData.forEach((value, key) => {
+      console.log(key, value);
+    });
+
     try {
       const response = await fetch("/api/s3-upload", {
         method: "POST",
@@ -24,7 +28,7 @@ const CreateBlog = () => {
 
       const result = await response.json();
       return result.fileUrl;
-
+      
     } catch (error) {
       setError("Fehler beim Hochladen des Bildes.");
       console.log(error)
