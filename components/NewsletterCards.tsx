@@ -1,10 +1,12 @@
 "use client";
-import { Blog } from "@prisma/client";
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { Blog } from "@prisma/client";
+import { Button } from "./ui/button";
+import React, { useEffect, useState } from "react";
 
 const NewsletterCards: React.FC = () => {
+  const [loading, setLoading] = useState(false);
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [windowWidth, setWindowWidth] = useState<number>(0); // Set initial width to 0
 
@@ -13,6 +15,10 @@ const NewsletterCards: React.FC = () => {
       const response = await fetch("/api/blog");
       const data = await response.json();
       setBlogs(data);
+
+      if (!data) {
+        setLoading(true);
+      }
     } catch (error) {
       console.error("Error fetching blogs:", error);
     }
@@ -35,26 +41,42 @@ const NewsletterCards: React.FC = () => {
   };
 
   return (
-    <div className="grid justify-center items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-14 mb-4">
-      {displayedBlogs().map((blog) => (
-        <div key={blog.id} className="flex flex-col items-center gap-3 w-fit">
-          <Link href="/newsletter">
-            <Image
-              src={blog.img}
-              alt="Logo Picture"
-              width={1920}
-              height={1080}
-              className="rounded-xl shadow-xl h-[400px] w-[380px] object-cover mb-5 hover:scale-105 duration-150"
-            />
-          </Link>
-          <h2 className="self-start text-orange-500 font-semibold text-xl">
-            {blog.title}
-          </h2>
-          <p className="self-end text-white opacity-50 -mt-4">
-            {blog.createdAt}
-          </p>
-        </div>
-      ))}
+    <div>
+      {loading ? <div>
+        <p>Blogeinträge werden geladen...</p>
+        <Button
+          onClick={() => {
+            location.reload()
+          }}
+          className="bg-white  hover:bg-gray-100 shadow-md">
+          <span className="font-bold text-black shadow-sm">
+            Erneut laden
+          </span>
+        </Button>
+      </div>
+        : (
+          <div className="grid justify-center items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-14 mb-4">
+            {displayedBlogs().map((blog) => (
+              <div key={blog.id} className="flex flex-col items-center gap-3 w-fit">
+                <Link href="/newsletter">
+                  <Image
+                    src={blog.img}
+                    alt="Logo Picture"
+                    width={1920}
+                    height={1080}
+                    className="rounded-xl shadow-xl h-[400px] w-[380px] object-cover mb-5 hover:scale-105 duration-150"
+                  />
+                </Link>
+                <h2 className="self-start text-orange-500 font-semibold text-xl">
+                  {blog.title}
+                </h2>
+                <p className="self-end text-white opacity-50 -mt-4">
+                  {blog.createdAt}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
     </div>
   );
 };
