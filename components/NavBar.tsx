@@ -6,6 +6,7 @@ import { useEffect, useState, useRef } from "react";
 
 const NavBar = () => {
   const [Display, setDisplay] = useState(false);
+  const [link, setLink] = useState("");
 
   const showHamburgerMenu = () => {
     setDisplay(!Display);
@@ -30,6 +31,24 @@ const NavBar = () => {
       document.removeEventListener("mousedown", handler);
     };
   }, []); // Leer lassen, damit es nur einmal ausgeführt wird
+
+  async function fetchPDFLink() {
+    const response = await fetch("/api/link/1");
+
+    if (!response.ok) {
+      console.error("Fehler beim Abrufen des Links", response.status);
+      return;
+    }
+
+    const data = await response.json();
+    console.log(data.document);
+    setLink(data.document);
+  };
+
+  useEffect(() => {
+    fetchPDFLink();
+  }, []);
+
 
   return (
     <div className="sticky top-0 flex justify-between items-center pl-2  sm:py-2 sm:px-8 w-full h-20 border-b-2 shadow-md bg-white z-50">
@@ -64,11 +83,16 @@ const NavBar = () => {
                 Verein
               </Link>
 
-              <Button className="bg-white  hover:bg-gray-100 shadow-md">
-                <span className="font-bold text-black shadow-sm">
-                  Mitglied werden
-                </span>
-              </Button>
+              <a href={link}
+                target={"_blank"}
+                rel="noopener noreferrer"
+              >
+                <Button className="bg-white  hover:bg-gray-100 shadow-md">
+                  <span className="font-bold text-black shadow-sm">
+                    Mitglied werden
+                  </span>
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -89,7 +113,7 @@ const NavBar = () => {
         </button>
 
         <button
-          onClick={() => {}}
+          onClick={() => { }}
           className="hover:border-b-4 border-orange-500 duration-150hover:scale-150 duration-150"
         >
           <Link href="/newsletter" className="py-8">
@@ -98,7 +122,7 @@ const NavBar = () => {
         </button>
 
         <button
-          onClick={() => {}}
+          onClick={() => { }}
           className="hover:border-b-4 border-orange-500 duration-150hover:scale-150 duration-150"
         >
           <Link href="/verein" className="py-8">
@@ -106,11 +130,16 @@ const NavBar = () => {
           </Link>
         </button>
 
-        <Button className="bg-orange-500 items-cent hover:bg-orange-600 hover:scale-105 transition duration-200 shadow-md">
-          <span className="font-bold text-white shadow-sm">
-            Mitglied werden
-          </span>
-        </Button>
+        <a href={link}
+          target={"_blank"}
+          rel="noopener noreferrer"
+        >
+          <Button className="bg-orange-500 items-cent hover:bg-orange-600 hover:scale-105 transition duration-200 shadow-md">
+            <span className="font-bold text-white shadow-sm">
+              Mitglied werden
+            </span>
+          </Button>
+        </a>
       </div>
     </div>
   );

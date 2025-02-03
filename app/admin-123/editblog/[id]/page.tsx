@@ -38,17 +38,17 @@ const EditBlog = () => {
     formData.append("image", file!);
 
     try {
-      const response = await fetch("/api/s3-upload", {
+      const response = await fetch("/api/s3-upload/images", {
         method: "POST",
         body: formData,
       });
 
       const result = await response.json();
       return result.fileUrl
-      
+
     } catch (error) {
       setError("Fehler beim Hochladen des Bildes.");
-      console.log(error)
+      console.log("Fehler beim hochladen auf AWS" + error);
     }
   };
 

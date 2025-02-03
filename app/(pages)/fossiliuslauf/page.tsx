@@ -1,5 +1,6 @@
+"use client";
+import DynamicLinkList from "@/components/DynamicLinkList";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 
@@ -21,7 +22,7 @@ const Fossiliuslauf = () => {
       <section>
         <div className="bg-white mt-10">
           <div className="flex flex-col sticky top-24">
-            <Card className="bg-sky-100 mb-24 mx-4 md:mx-14 flex flex-col items-center md:flex-row md:items-center animate-zoom zoom ">
+            <Card className="bg-sky-100 mb-24 mx-4 md:mx-14 flex flex-col items-center md:flex-row md:items-center">
               <Image
                 src="/lauf-erwachsen.png"
                 alt="Logo Picture"
@@ -57,12 +58,12 @@ const Fossiliuslauf = () => {
               alt="Logo Picture"
               width={1920}
               height={1080}
-              className="z-20 self-start rounded-xl shadow-xl h-[130px] w-[240px] sm:hidden mb-5 -mt-44 sm:-mt-80 mx-1 hover:scale-105 duration-150"
+              className="z-20 self-start rounded-xl shadow-xl h-[130px] w-[240px] sm:hidden mb-5 -mt-44 sm:-mt-80 mx-1"
             />
           </div>
 
           <div className="flex flex-col sticky top-24 bg-white">
-            <Card className="bg-orange-500 mb-24 mx-4 md:mx-14 flex flex-col items-center md:flex-row md:justify-between md:items-center animate-zoom zoom">
+            <Card className="bg-orange-500 mb-24 mx-4 md:mx-14 flex flex-col items-center md:flex-row md:justify-between md:items-center">
               <Image
                 src="/lauf-jung.png"
                 alt="Logo Picture"
@@ -97,12 +98,12 @@ const Fossiliuslauf = () => {
               alt="Logo Picture"
               width={1920}
               height={1080}
-              className="z-20 self-end rounded-xl shadow-xl h-[130px] w-[240px] sm:hidden mb-14 -mt-40 sm:-mt-80 mx-1 hover:scale-105 duration-150"
+              className="z-20 self-end rounded-xl shadow-xl h-[130px] w-[240px] sm:hidden mb-14 -mt-40 sm:-mt-80 mx-1"
             />
           </div>
 
           <div className="flex flex-col sticky top-24 bg-white">
-            <Card className="bg-slate-700 mb-24 mx-4 md:mx-14 flex flex-col items-center md:flex-row md:items-center animate-zoom zoom ">
+            <Card className="bg-slate-700 mb-24 mx-4 md:mx-14 flex flex-col items-center md:flex-row md:items-center">
               <Image
                 src="/lauf-kinder.png"
                 alt="Logo Picture"
@@ -140,7 +141,7 @@ const Fossiliuslauf = () => {
               alt="Logo Picture"
               width={1920}
               height={1080}
-              className="z-20 self-start rounded-xl shadow-xl h-[130px] w-[240px] sm:hidden mb-5 -mt-36 sm:-mt-80 mx-1 hover:scale-105 duration-150"
+              className="z-20 self-start rounded-xl shadow-xl h-[130px] w-[240px] sm:hidden mb-5 -mt-36 sm:-mt-80 mx-1"
             />
           </div>
         </div>
@@ -159,95 +160,7 @@ const Fossiliuslauf = () => {
             height={1080}
             className="hidden md:block w-[550px] h-fit z-0"
           />
-          <div className="flex flex-col gap-5 sm:w-[600px] lg:w-[850px] bg-orange-500 p-8 mx-2 sm:m-12 rounded-md shadow-xl mb-12 hover:scale-105 duration-150 w-full">
-            <div className="flex justify-between ">
-              <h3 className=" sm:font-semibold  text-2xl lg:text-2xl -ml-2 ">
-                Hauptlauf
-              </h3>
-              <a
-                href="/"
-                className="bg-white py-1 px-2 rounded-sm w-fit shadow-md font-semibold hover:scale-105 duration-150 "
-              >
-                <p className="block sm:hidden">Link</p>
-                <p className="hidden sm:block">Link zum Download</p>
-              </a>
-            </div>
-            <div className="border-solid border-small border-y-1 border-gray-300 rounded-xl">
-              {" "}
-            </div>
-            <div className="flex justify-between ">
-              <h3 className=" sm:font-semibold  text-2xl lg:text-2xl -ml-2 ">
-                Jedermannlauf
-              </h3>
-              <a
-                href="/"
-                className="bg-white py-1 px-2 rounded-sm w-fit shadow-md font-semibold hover:scale-105 duration-150 "
-              >
-                <p className="block sm:hidden">Link</p>
-                <p className="hidden sm:block">Link zum Download</p>
-              </a>
-            </div>
-            <div className="border-solid border-small border-y-1 border-gray-300 rounded-xl">
-              {" "}
-            </div>
-            <div className="flex justify-between ">
-              <h3 className=" sm:font-semibold  text-2xl lg:text-2xl -ml-2 ">
-                Nordic-Walker
-              </h3>
-              <a
-                href="/"
-                className="bg-white py-1 px-2 rounded-sm w-fit shadow-md font-semibold hover:scale-105 duration-150 "
-              >
-                <p className="block sm:hidden">Link</p>
-                <p className="hidden sm:block">Link zum Download</p>
-              </a>
-            </div>
-            <div className="border-solid border-small border-y-1 border-gray-300 rounded-xl">
-              {" "}
-            </div>
-            <div className="flex justify-between ">
-              <h3 className=" sm:font-semibold  text-2xl lg:text-2xl -ml-2 ">
-                Schülerlauf
-              </h3>
-              <a
-                href="/"
-                className="bg-white py-1 px-2 rounded-sm w-fit shadow-md font-semibold hover:scale-105 duration-150 "
-              >
-                <p className="block sm:hidden">Link</p>
-                <p className="hidden sm:block">Link zum Download</p>
-              </a>
-            </div>
-            <div className="border-solid border-small border-y-1 border-gray-300 rounded-xl">
-              {" "}
-            </div>
-            <div className="flex justify-between ">
-              <h3 className=" sm:font-semibold  text-2xl lg:text-2xl -ml-2 ">
-                Kidslauf
-              </h3>
-              <a
-                href="/"
-                className="bg-white py-1 px-2 rounded-sm w-fit shadow-md font-semibold hover:scale-105 duration-150 "
-              >
-                <p className="block sm:hidden">Link</p>
-                <p className="hidden sm:block">Link zum Download</p>
-              </a>
-            </div>
-            <div className="border-solid border-small border-y-1 border-gray-300 rounded-xl">
-              {" "}
-            </div>
-            <div className="flex justify-between ">
-              <h3 className=" sm:font-semibold  text-2xl lg:text-2xl -ml-2 ">
-                Bambinilauf
-              </h3>
-              <a
-                href="/"
-                className="bg-white py-1 px-2 rounded-sm w-fit shadow-md font-semibold hover:scale-105 duration-150 "
-              >
-                <p className="block sm:hidden">Link</p>
-                <p className="hidden sm:block">Link zum Download</p>
-              </a>
-            </div>
-          </div>
+          <DynamicLinkList />
         </div>
       </section>
 
@@ -274,9 +187,3 @@ const Fossiliuslauf = () => {
 };
 
 export default Fossiliuslauf;
-
-
-export const metadata: Metadata = {
-  title: "Fossiliuslauf",
-  description: "Alle wichtigen Informationen über den Fossiliuslauf"
-}

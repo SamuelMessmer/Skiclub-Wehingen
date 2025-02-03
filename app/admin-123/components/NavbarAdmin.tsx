@@ -23,7 +23,7 @@ const NavBar = () => {
 
       <hr />
 
-      <Link href="/admin-123/change-form" className=" p-3 hover:scale-105 duration-150">
+      <Link href="/admin-123/editlinks" className=" p-3 hover:scale-105 duration-150">
         <div className="font-bold text-xl">
          Verwaltung <br /> Links 
         </div>

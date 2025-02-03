@@ -1,11 +1,8 @@
-import prisma from "@/prisma/client";
+import prisma from "@/prisma/lib/clientLinkData";
 import { NextRequest, NextResponse } from "next/server";
 import schema from "@/app/api/blog/schema";
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function GET({ params }: { params: { id: string } }) {
   const uniqueBlog = await prisma.blog.findUnique({
     where: {
       id: parseInt(params.id),

@@ -1,0 +1,45 @@
+import prisma from "@/prisma/lib/clientLinkData";
+import { NextRequest, NextResponse } from "next/server";
+
+export async function GET() {
+    const link = await prisma.linkData.findUnique({
+        where: {
+            id: 1,
+        },
+    });
+
+    if (!link)
+        return NextResponse.json({ error: "link not found" }, { status: 404 });
+    return NextResponse.json(link, { status: 200 });
+}
+
+export async function PATCH(request: NextRequest, { params }: { params: { id: string } }) {
+    const body = await request.json();
+
+    const test = await prisma.linkData.findUnique({
+        where: {
+            id: parseInt(params.id),
+        }
+    })
+
+    if (!test || test == null)
+        return NextResponse.json({ error: "Link wurde nicht gefunden" }, { status: 404 });
+
+    try {
+        await prisma.linkData.update({
+            where: {
+                id: parseInt(params.id),
+            },
+
+            data: {
+                document: body.document,
+            }
+        });
+
+        return NextResponse.json(body, { status: 200 });
+    } catch (error) {
+        console.log("Fehler beim updaten, Internal server error" + error);
+
+        return NextResponse.json({ error: "Internale server error, währen dem updaten der Datenbank" }, { status: 500 });
+    }
+}

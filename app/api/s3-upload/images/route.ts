@@ -11,7 +11,7 @@ const s3Client = new S3Client({
   },
 });
 
-const optimizeImage = async (buffer: Buffer) => {
+async function optimizeImage(buffer: Buffer) {
   const optimizedBuffer = await sharp(buffer)
     .jpeg({ quality: 80, progressive: true })
     .toBuffer();
@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
   try {
     const command = new PutObjectCommand(uploadParams);
     await s3Client.send(command);
-    console.log("file uploaded successfully:", fileName);
+    console.log("File uploaded successfully:", fileName);
 
     const fileUrl = `https://${process.env.AWS_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${fileName}`;
     return NextResponse.json({ success: true, fileUrl }, { status: 201 }); //zurück geben der amazon aws URL für das frontend
