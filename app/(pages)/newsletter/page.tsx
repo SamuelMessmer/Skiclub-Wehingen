@@ -45,16 +45,16 @@ const Newsletter = () => {
       <section>
         <div className="bg-white mt-10">
           {blogs.map((blog) => (
-            <div key={blog.id} className="flex flex-col xl:mx-40">
-              <Card className="mb-24 mx-4 md:mx-14 flex flex-col items-center md:items-center shadow-xl">
+            <div key={blog.id} className="flex flex-col xl:mx-40 animate-zoom zoom">
+              <Card className="mb-24 mx-4 md:mx-14 flex flex-col items-center md:items-center shadow-xl sm:p-8 md:p-0">
                 <Image
                   src={blog.img}
                   alt="Logo Picture"
                   width={1920}
                   height={1080}
-                  className="hidden sm:block rounded-xl shadow-xl mt-12 md:mt-5 md:mx-5 lg:my-5 lg:h-[520px] w-fit object-cover hover:scale-105 duration-150"
+                  className="hidden sm:block rounded-xl shadow-xl md:mt-5 md:mx-5 lg:my-5 lg:h-[520px] w-fit object-cover hover:scale-105 duration-150"
                 />
-                <div className="">
+                <div>
                   <CardHeader className="font-bold text-3xl lg:text-5xl -ml-2 mb-4 text-orange-500">
                     {blog.title}
                   </CardHeader>

@@ -12,7 +12,6 @@ import { DropdownMenu } from "@radix-ui/react-dropdown-menu";
 import React, { useEffect, useState } from "react";
 import NavbarAdmin from "../components/NavbarAdmin";
 
-
 const ERROR_MESSAGE: string = 'Ein Fehler ist aufgetreten';
 
 const ManageLinks = () => {
@@ -154,6 +153,7 @@ const ManageLinks = () => {
                                                     />
 
                                                     <Button
+                                                        onClick={() => setId(link.id)}
                                                         type="submit"
                                                         disabled={loading}
                                                         className="bg-orange-500 items-cent hover:bg-orange-600 hover:scale-105 transition duration-200 shadow-md w-full"

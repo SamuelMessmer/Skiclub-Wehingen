@@ -14,6 +14,8 @@ export default function LaufListe() {
             try {
                 const response = await fetch("/api/link");
                 const data = await response.json();
+
+                console.log("API REsponse::: " + data)
                 setLinks(data);
             } catch (error) {
                 console.error("Fehler beim Laden der Links:", error);
@@ -35,7 +37,7 @@ export default function LaufListe() {
     return (
         <div className="flex flex-col gap-5 sm:w-[600px] lg:w-[850px] bg-orange-500 p-8 mx-2 sm:m-12 rounded-md shadow-xl mb-12 w-full">
             {laufEvents.map((event, index) => {
-                const linkItem = links.find((link) => link.id === index); // Annahme: IDs sind von 1 bis n
+                const linkItem = links[index + 1]; // Annahme: IDs sind von 1 bis n
                 return (
                     <div key={event} className="mb-5">
                         <div className="flex justify-between mb-2">
