@@ -9,8 +9,9 @@ export async function GET() {
     },
   });
 
-  if (!blogs)
+  if (blogs.length === 0)
     return NextResponse.json({ error: "Blog not found" }, { status: 404 });
+
   return NextResponse.json(blogs, { status: 200 });
 }
 
