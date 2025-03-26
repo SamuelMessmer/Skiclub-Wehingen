@@ -28,7 +28,7 @@ const CreateBlog = () => {
 
       const result = await response.json();
       return result.fileUrl;
-      
+
     } catch (error) {
       setError("Fehler beim Hochladen des Bildes.");
       console.log(error)
@@ -37,34 +37,42 @@ const CreateBlog = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+    setError(null);
+    setSuccess(null);
+    e.preventDefault();
 
-    const awsUrl = await handleImageUpload(); //handleImageUpload returns awsUrl als string   
+    try {
+      const awsUrl = await handleImageUpload(); //handleImageUpload returns awsUrl als string   
 
-    const blogData = {
-      title,
-      content,
-      img: awsUrl, // Die S3-Bild-URL verwenden
-    };
+      const blogData = {
+        title,
+        content,
+        img: awsUrl, // Die S3-Bild-URL verwenden
+      };
 
-    const response = await fetch("/api/blog", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(blogData),
-    });
+      const response = await fetch("/api/blog", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(blogData),
+      });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      setError("Fehler beim Speichern: " + error + JSON.stringify(errorData));
-      console.log(error);
-    } else {
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Unbekannter Fehler");
+      }
+
       setSuccess("Blog erfolgreich erstellt!");
       setTitle("");
       setContent("");
       setLoading(false);
       setFile(null); // Setze img zurück auf null
-
+    } catch (error) {
+      setError("Fehler beim Speichern")
+      console.log("Hier ist der Fehler: " + error)
+    } finally {
       location.replace("/admin-123");
     }
   };
