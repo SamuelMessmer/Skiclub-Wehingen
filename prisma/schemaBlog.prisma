@@ -20,9 +20,3 @@ model Blog {
   img       String
   createdAt String
 }
-
-model LinkData {
-  id       Int    @id @default(autoincrement())
-  name     String @unique
-  document String
-}
