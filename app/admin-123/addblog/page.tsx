@@ -26,6 +26,8 @@ const CreateBlog = () => {
         body: formData,
       });
 
+      if (!response.ok) throw new Error("Upload fehlgeschlage")
+
       const result = await response.json();
       return result.fileUrl;
 
@@ -44,6 +46,7 @@ const CreateBlog = () => {
 
     try {
       const awsUrl = await handleImageUpload(); //handleImageUpload returns awsUrl als string   
+      if (awsUrl === undefined) return
 
       const blogData = {
         title,
