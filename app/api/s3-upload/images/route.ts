@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
   const allowedTypes = ["image/jpeg", "image/png"];
 
   const formData = await request.formData();
-  const file = formData.get("image") as File; // as File because of Type safety und get function um file zu extrahieren
+  const file = formData.get("file") as File; // as File because of Type safety und get function um file zu extrahieren
 
   if (!file)
     return NextResponse.json({ error: "File is required" }, { status: 400 });

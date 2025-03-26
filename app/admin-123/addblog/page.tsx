@@ -14,14 +14,14 @@ const CreateBlog = () => {
 
   const handleImageUpload = async () => {
     const formData = new FormData();
-    formData.append("image", file!);
+    formData.append("file", file!);
 
-    formData.forEach((value, key) => {
-      console.log(key, value);
-    });
+    // formData.forEach((value, key) => {
+    //   console.log(key, value);
+    // });
 
     try {
-      const response = await fetch("/api/s3-upload", {
+      const response = await fetch("/api/s3-upload/images", {
         method: "POST",
         body: formData,
       });
@@ -72,11 +72,10 @@ const CreateBlog = () => {
       setContent("");
       setLoading(false);
       setFile(null); // Setze img zurück auf null
+      location.replace("/admin-123");
     } catch (error) {
       setError("Fehler beim Speichern")
       console.log("Hier ist der Fehler: " + error)
-    } finally {
-      location.replace("/admin-123");
     }
   };
 
