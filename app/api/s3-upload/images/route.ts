@@ -3,63 +3,118 @@ import crypto from "crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 
-const s3Client = new S3Client({
-  region: process.env.AWS_REGION,
-  credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID!,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY_ID!,
-  },
-});
-
-async function optimizeImage(buffer: Buffer) {
-  const optimizedBuffer = await sharp(buffer)
-    .jpeg({ quality: 80, progressive: true })
-    .toBuffer();
-  return optimizedBuffer;
-};
-
 
 export async function POST(request: NextRequest) {
-  const allowedTypes = ["image/jpeg", "image/png"];
-
-  const formData = await request.formData();
-  const file = formData.get("file") as File; // as File because of Type safety und get function um file zu extrahieren
-
-  if (!file)
-    return NextResponse.json({ error: "File is required" }, { status: 400 });
-
-  const randomName = crypto.randomBytes(8).toString("hex");
-
-  //jetzt file in buffer konvertieren, damit AWS die Datei akzeptieren/laden kann
-  // const buffer = Buffer.from(await file.arrayBuffer());
-  const buffer = await file.arrayBuffer();
-  const optimizedBuffer = await optimizeImage(Buffer.from(buffer));
-
-  const fileName = `${randomName}-${file.name}`;
-
-  if (!allowedTypes.includes(file.type)) {
-    return NextResponse.json({ message: `Der Bild Typ: ${file.type} wird nicht unterstützt` }, { status: 400 });
-  }
-
-  const uploadParams = {
-    Bucket: process.env.AWS_BUCKET_NAME,
-    Key: fileName,
-    Body: optimizedBuffer,
-    ContentType: file.type,
-  };
+  const s3Service = new S3Service(s3Config)
 
   try {
-    const command = new PutObjectCommand(uploadParams);
-    await s3Client.send(command);
-    console.log("File uploaded successfully:", fileName);
+    const formData = await request.formData()
+    const file = formData.get('file') as File
 
-    const fileUrl = `https://${process.env.AWS_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${fileName}`;
-    return NextResponse.json({ success: true, fileUrl }, { status: 201 }); //zurück geben der amazon aws URL für das frontend
+    if (!file) return ApiResponse.error('File is required', 400)
+
+    FileHandler.validateFileType(file.type)
+
+    const imageBuffer = Buffer.from(await file.arrayBuffer())
+    const optimizedBuffer = await ImageOptimizer.optimize(imageBuffer)
+    const fileName = FileHandler.generateUniqueFileName(file.name)
+
+    await s3Service.uploadFile(fileName, optimizedBuffer, file.type)
+
+    const fileUrl = `https://${s3Config.bucketName}.s3.${s3Config.region}.amazonaws.com/${fileName}`
+    return ApiResponse.success(fileUrl)
   } catch (error) {
-    console.log("AWS upload failed:", error);
-    return NextResponse.json(
-      { error: "Internal server error, uploading to AWS" },
-      { status: 500 }
-    );
+    console.error('File upload failed:', error)
+
+    if (error instanceof Error) {
+      return ApiResponse.error(error.message, 400)
+    }
+    return ApiResponse.error('Internal server error', 500)
+  }
+}
+
+// Configuration interface for better type safety
+interface S3Config {
+  region: string
+  credentials: {
+    accessKeyId: string
+    secretAccessKey: string
+  }
+  bucketName: string
+}
+
+// Configuration (could be moved to separate config file)
+const s3Config: S3Config = {
+  region: process.env.AWS_REGION!,
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY!,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY!,
+  },
+  bucketName: process.env.AWS_BUCKET_NAME!,
+}
+
+
+class S3Service {
+  private client: S3Client
+  private config: S3Config
+
+  constructor(config: S3Config) {
+    this.client = new S3Client({
+      region: config.region,
+      credentials: config.credentials,
+    })
+    this.config = config
+  }
+
+  async uploadFile(fileName: string, buffer: Buffer, contentType: string) {
+    const command = new PutObjectCommand({
+      Bucket: this.config.bucketName,
+      Key: fileName,
+      Body: buffer,
+      ContentType: contentType,
+    })
+
+    await this.client.send(command)
+  }
+}
+
+// Utility functions
+class FileHandler {
+  private static readonly ALLOWED_MIME_TYPES = ['image/jpeg', 'image/png']
+
+  static validateFileType(mimeType: string): void {
+    if (!this.ALLOWED_MIME_TYPES.includes(mimeType)) {
+      throw new Error(`Unsupported file type: ${mimeType}`)
+    }
+  }
+
+  static generateUniqueFileName(originalName: string): string {
+    const randomString = crypto.randomBytes(8).toString('hex')
+    return `${randomString}-${originalName}`
+  }
+}
+
+
+// Response handler
+class ApiResponse {
+  static error(message: string, status: number) {
+    console.log("Error, " + message + " status: " + status)
+    return NextResponse.json({ error: message }, { status })
+  }
+
+  static success(fileUrl: string) {
+    return NextResponse.json({ success: true, fileUrl }, { status: 201 })
+  }
+}
+
+
+// Service classes for better separation of concerns
+class ImageOptimizer {
+  private static readonly JPEG_QUALITY = 80
+
+  static async optimize(buffer: Buffer): Promise<Buffer> {
+    return sharp(buffer)
+      .jpeg({ quality: this.JPEG_QUALITY, progressive: true })
+      .toBuffer()
   }
 }
