@@ -11,7 +11,7 @@ export async function GET(
     },
   });
 
-  if (!uniqueBlog)
+  if (uniqueBlog == null)
     return NextResponse.json({ error: "Blog not found" }, { status: 404 });
 
   return NextResponse.json(uniqueBlog);

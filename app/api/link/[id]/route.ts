@@ -8,7 +8,7 @@ export async function GET() {
         },
     });
 
-    if (!link)
+    if (link == null)
         return NextResponse.json({ error: "link not found" }, { status: 404 });
     return NextResponse.json(link, { status: 200 });
 }
