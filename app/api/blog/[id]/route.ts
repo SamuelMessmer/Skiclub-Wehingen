@@ -1,6 +1,6 @@
-import prisma from "@/prisma/lib/clientLinkData";
+import prisma from "@/prisma/lib/client";
 import { NextRequest, NextResponse } from "next/server";
-import schema from "@/app/api/blog/schema";
+import schema from "../schema";
 
 export async function GET(
   request: NextRequest,
