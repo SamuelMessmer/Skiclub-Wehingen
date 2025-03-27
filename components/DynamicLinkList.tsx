@@ -15,7 +15,7 @@ export default function LaufListe() {
                 const response = await fetch("/api/link");
                 const data = await response.json();
 
-                console.log("API REsponse::: " + data)
+                console.log("API REsponse: " + data)
                 setLinks(data);
             } catch (error) {
                 console.error("Fehler beim Laden der Links:", error);
