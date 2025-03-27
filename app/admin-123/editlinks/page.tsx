@@ -45,7 +45,7 @@ const ManageLinks = () => {
         }
 
         const formData = new FormData();
-        formData.append("pdf", file!);
+        formData.append("file", file!);
 
         try {
             const response = await fetch("/api/s3-upload/pdfs", {
