@@ -1,5 +1,5 @@
 import { S3Client } from "@aws-sdk/client-s3"
-import { NextRequest } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 import { ApiResponse, UploadStrategyFactory } from "./upload-strategy.util"
 
 const s3Client = new S3Client({
@@ -25,9 +25,14 @@ export async function POST(request: NextRequest) {
         )
 
         uploadStrategy.validate(file)
-        return await uploadStrategy.upload(file)
+        const result = await uploadStrategy.upload(file)
+
+        if (!result)
+            return NextResponse.json(result)
+        return NextResponse.json(result)
     } catch (error) {
-        console.error('Upload failed, duw to thrown Error: ', error)
-        return ApiResponse.error(error instanceof Error ? error.message : 'Unknown error', 500)
+        if (error instanceof Error)
+            return ApiResponse.error(error.message, 400)
+        return ApiResponse.error('Unknown error', 500)
     }
 }

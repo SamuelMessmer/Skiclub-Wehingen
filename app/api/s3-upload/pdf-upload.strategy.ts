@@ -40,6 +40,7 @@ export class PdfUploadStrategy implements FileUploadStrategy {
             return ApiResponse.success(this.generateFileUrl(fileName))
         } catch (error) {
             return ApiResponse.error("Upload -(PDF)- to AWS S3 failed!", 500)
+            console.error(error);
         }
     }
 

@@ -40,7 +40,8 @@ export class ImageUploadStrategy implements FileUploadStrategy {
 
             return ApiResponse.success(this.generateFileUrl(fileName))
         } catch (error) {
-            return ApiResponse.error("Upload to AWS S3 failed!", 500)
+            return ApiResponse.error("Upload -(image)- to AWS S3 failed!: ", 500)
+            console.error(error)
         }
     }
 

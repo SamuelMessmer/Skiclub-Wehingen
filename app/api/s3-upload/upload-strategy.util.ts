@@ -33,12 +33,12 @@ export class UploadStrategyFactory {
 
 // Response handler
 export class ApiResponse {
+    static success(fileUrl: string) {
+        return NextResponse.json({ success: true, fileUrl }, { status: 201 })
+    }
+    
     static error(message: string, status: number) {
         console.log("Error, " + message + " status: " + status)
         return NextResponse.json({ error: message }, { status })
-    }
-
-    static success(fileUrl: string) {
-        return NextResponse.json({ success: true, fileUrl }, { status: 201 })
     }
 }

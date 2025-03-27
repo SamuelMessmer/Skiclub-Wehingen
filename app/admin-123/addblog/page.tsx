@@ -21,7 +21,7 @@ const CreateBlog = () => {
     // });
 
     try {
-      const response = await fetch("/api/s3-upload/images", {
+      const response = await fetch("/api/s3-upload", {
         method: "POST",
         body: formData,
       });
