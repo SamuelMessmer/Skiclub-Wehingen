@@ -1,6 +1,6 @@
 import { S3Client } from "@aws-sdk/client-s3"
 import { NextRequest, NextResponse } from "next/server"
-import { ApiResponse, UploadStrategyFactory } from "./upload-strategy.util"
+import { UploadResult, UploadStrategyFactory } from "./upload-strategy.util"
 
 const s3Client = new S3Client({
     region: process.env.AWS_REGION!,
@@ -25,14 +25,32 @@ export async function POST(request: NextRequest) {
         )
 
         uploadStrategy.validate(file)
-        const result = await uploadStrategy.upload(file)
 
-        if (!result)
-            return NextResponse.json(result)
-        return NextResponse.json(result)
+        const result = await uploadStrategy.upload(file)
+        return ApiResponse.fromResult(result)
+
     } catch (error) {
-        if (error instanceof Error)
+        if (error instanceof Error) {
             return ApiResponse.error(error.message, 400)
+        }
         return ApiResponse.error('Unknown error', 500)
+    }
+}
+
+
+// Response handler
+export class ApiResponse {
+    static fromResult(result: UploadResult) {
+        return result.success
+            ? NextResponse.json(result, { status: 201 })
+            : NextResponse.json(result, { status: 400 })
+    }
+
+    static error(message: string, status: number) {
+        console.log("Error, " + message + " status: " + status)
+        return NextResponse.json(
+            { success: false, error: message },
+            { status }
+        )
     }
 }

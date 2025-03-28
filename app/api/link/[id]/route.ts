@@ -22,15 +22,13 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
         }
     })
 
-    if (!test || test == null)
-        return NextResponse.json({ error: "Link wurde nicht gefunden" }, { status: 404 });
+    if (test == null) return NextResponse.json({ error: "Link wurde nicht gefunden" }, { status: 404 });
 
     try {
         await prisma.linkData.update({
             where: {
                 id: parseInt(params.id),
             },
-
             data: {
                 document: body.document,
             }
@@ -38,7 +36,7 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
 
         return NextResponse.json(body, { status: 200 });
     } catch (error) {
-        console.log("Fehler beim updaten, Internal server error" + error);
+        console.log("Fehler beim updaten, Internal server error: " + error);
 
         return NextResponse.json({ error: "Internale server error, währen dem updaten der Datenbank" }, { status: 500 });
     }

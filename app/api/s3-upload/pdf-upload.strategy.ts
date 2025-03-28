@@ -1,5 +1,5 @@
 import crypto from "crypto";
-import { ApiResponse, FileUploadStrategy } from "./upload-strategy.util";
+import { FileUploadStrategy, UploadResult } from "./upload-strategy.util";
 import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 
 
@@ -23,7 +23,7 @@ export class PdfUploadStrategy implements FileUploadStrategy {
         return `${randomString}-${file.name}`
     }
 
-    async upload(file: File): Promise<ApiResponse> {
+    async upload(file: File): Promise<UploadResult> {
         try {
             const buffer = Buffer.from(await file.arrayBuffer())
             const fileName = this.generateFileName(file)
@@ -37,10 +37,18 @@ export class PdfUploadStrategy implements FileUploadStrategy {
                 })
             )
 
-            return ApiResponse.success(this.generateFileUrl(fileName))
+            return {
+                success: true,
+                fileUrl: this.generateFileUrl(file.name),
+                status: 200
+            }
         } catch (error) {
-            return ApiResponse.error("Upload -(PDF)- to AWS S3 failed!", 500)
             console.error(error);
+            return {
+                success: false,
+                status: 500,
+                errorMessage: "Upload -(PDF)- to AWS S3 failed!"
+            }
         }
     }
 

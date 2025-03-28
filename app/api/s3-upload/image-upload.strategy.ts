@@ -1,5 +1,5 @@
 import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
-import { ApiResponse, FileUploadStrategy } from "./upload-strategy.util";
+import { FileUploadStrategy, UploadResult } from "./upload-strategy.util";
 import crypto from "crypto";
 import sharp from "sharp";
 
@@ -24,7 +24,7 @@ export class ImageUploadStrategy implements FileUploadStrategy {
         return `${randomString}-${file.name}`
     }
 
-    async upload(file: File): Promise<ApiResponse> {
+    async upload(file: File): Promise<UploadResult> {
         try {
             const buffer = await this.optimizeImage(await file.arrayBuffer())
             const fileName = this.generateFileName(file)
@@ -38,10 +38,18 @@ export class ImageUploadStrategy implements FileUploadStrategy {
                 })
             )
 
-            return ApiResponse.success(this.generateFileUrl(fileName))
+            return {
+                success: true,
+                fileUrl: this.generateFileUrl(file.name),
+                status: 200
+            }
         } catch (error) {
-            return ApiResponse.error("Upload -(image)- to AWS S3 failed!: ", 500)
             console.error(error)
+            return {
+                success: false,
+                status: 500,
+                errorMessage: "Upload -(image)- to AWS S3 failed!: "
+            }
         }
     }
 

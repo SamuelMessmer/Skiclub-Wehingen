@@ -100,7 +100,6 @@ const ManageLinks = () => {
             setLoading(false);
             location.reload();
         }
-
     }
 
     //nur für das Dropdownmenü wichtig
