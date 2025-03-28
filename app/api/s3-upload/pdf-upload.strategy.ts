@@ -39,7 +39,7 @@ export class PdfUploadStrategy implements FileUploadStrategy {
 
             return {
                 success: true,
-                fileUrl: this.generateFileUrl(file.name),
+                fileUrl: this.generateFileUrl(fileName),
                 status: 200
             }
         } catch (error) {
