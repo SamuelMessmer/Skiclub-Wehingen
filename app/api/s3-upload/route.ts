@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
 
 
 // Response handler
-export class ApiResponse {
+class ApiResponse {
     static fromResult(result: UploadResult) {
         return result.success
             ? NextResponse.json(result, { status: 201 })
