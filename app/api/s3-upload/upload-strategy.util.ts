@@ -10,7 +10,7 @@ export interface FileUploadStrategy {
 }
 
 export interface UploadResult {
-    success: boolean
+    success?: boolean
     fileUrl?: string
     status: number
     errorMessage?: string

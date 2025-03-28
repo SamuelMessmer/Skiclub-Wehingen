@@ -28,7 +28,6 @@ export async function POST(request: NextRequest) {
 
         const result = await uploadStrategy.upload(file)
         return ApiResponse.fromResult(result)
-
     } catch (error) {
         if (error instanceof Error) {
             return ApiResponse.error(error.message, 400)
@@ -39,7 +38,7 @@ export async function POST(request: NextRequest) {
 
 
 // Response handler
-class ApiResponse {
+ class ApiResponse {
     static fromResult(result: UploadResult) {
         return result.success
             ? NextResponse.json(result, { status: 201 })

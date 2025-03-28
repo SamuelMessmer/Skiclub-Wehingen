@@ -36,7 +36,7 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
 
         return NextResponse.json(body, { status: 200 });
     } catch (error) {
-        console.log("Fehler beim updaten, Internal server error: " + error);
+        console.log("Fehler beim updaten -(link)-, Internal server error: " + error);
 
         return NextResponse.json({ error: "Internale server error, währen dem updaten der Datenbank" }, { status: 500 });
     }

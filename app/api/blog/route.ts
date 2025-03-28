@@ -16,20 +16,6 @@ export async function POST(request: NextRequest) {
   const body = await request.json();
   const validation = schema.safeParse(body);
 
-
-  const dateFormat: Intl.DateTimeFormatOptions = {
-    day: 'numeric',
-    month: 'long',
-    year: '2-digit'
-  }
-
-  const timestamp = Date.now();
-  const date = new Date(timestamp);
-  const formattedDate = date.toLocaleDateString('de-DE', dateFormat);
-
-  if (body.img == null)
-    return NextResponse.json({ message: "Bild wird nicht korrekt hochgeladen" }, { status: 400 });
-
   if (!validation.success)
     return NextResponse.json(validation.error.errors, { status: 400 });
 
@@ -39,7 +25,7 @@ export async function POST(request: NextRequest) {
         title: body.title,
         content: body.content,
         img: body.img,
-        createdAt: formattedDate,
+        createdAt: DateHandler.generateDateString(Date.now()),
       },
     });
 
@@ -50,5 +36,18 @@ export async function POST(request: NextRequest) {
       { error: "Internal server error while uploading to db" },
       { status: 500 }
     );
+  }
+}
+
+class DateHandler {
+  private static dateFormat: Intl.DateTimeFormatOptions = {
+    day: 'numeric',
+    month: 'long',
+    year: '2-digit'
+  }
+
+  static generateDateString(dateAsNumber: number): string {
+    const currentDate = new Date(dateAsNumber)
+    return currentDate.toLocaleDateString('de-DE', this.dateFormat)
   }
 }

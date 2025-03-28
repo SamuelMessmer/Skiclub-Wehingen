@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation"; // useParams for accessing dynamic params
 import NavBarAdmin from "../../components/NavbarAdmin";
+import { UploadResult } from "@/app/api/s3-upload/upload-strategy.util";
 
 const EditBlog = () => {
   const { id } = useParams(); // useParams to access the 'id' from the URL
@@ -35,15 +36,15 @@ const EditBlog = () => {
 
   const handleImageUpload = async () => {
     const formData = new FormData();
-    formData.append("image", file!);
+    formData.append("file", file!);
 
     try {
-      const response = await fetch("/api/s3-upload/images", {
+      const response = await fetch("/api/s3-upload", {
         method: "POST",
         body: formData,
       });
 
-      const result = await response.json();
+      const result: UploadResult = await response.json();
       return result.fileUrl
 
     } catch (error) {

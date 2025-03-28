@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import NavbarAdmin from "../components/NavbarAdmin";
+import { UploadResult } from "@/app/api/s3-upload/upload-strategy.util";
 
 const CreateBlog = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -16,10 +17,6 @@ const CreateBlog = () => {
     const formData = new FormData();
     formData.append("file", file!);
 
-    // formData.forEach((value, key) => {
-    //   console.log(key, value);
-    // });
-
     try {
       const response = await fetch("/api/s3-upload", {
         method: "POST",
@@ -28,7 +25,7 @@ const CreateBlog = () => {
 
       if (!response.ok) throw new Error("Upload fehlgeschlage")
 
-      const result = await response.json();
+      const result: UploadResult = await response.json();
       return result.fileUrl;
 
     } catch (error) {

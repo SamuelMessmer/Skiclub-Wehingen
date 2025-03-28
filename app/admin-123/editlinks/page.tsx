@@ -11,6 +11,7 @@ import { LinkData } from "@prisma/client";
 import { DropdownMenu } from "@radix-ui/react-dropdown-menu";
 import React, { useEffect, useState } from "react";
 import NavbarAdmin from "../components/NavbarAdmin";
+import { UploadResult } from "@/app/api/s3-upload/upload-strategy.util";
 
 const ERROR_MESSAGE: string = 'Ein Fehler ist aufgetreten';
 
@@ -53,8 +54,8 @@ const ManageLinks = () => {
                 body: formData,
             });
 
-            const result: string = await response.json();
-            return result
+            const result: UploadResult = await response.json();
+            return result.fileUrl
         } catch (error) {
             setError("Fehler beim Hochladen des Bildes.");
             console.log(error)
@@ -65,8 +66,8 @@ const ManageLinks = () => {
         e.preventDefault();
         setLoading(true);
 
-        const fileUrl = await handlePDFUpload();
-        if (!fileUrl) {
+        const awsUrl = await handlePDFUpload();
+        if (!awsUrl) {
             setError("Fehler beim Hochladen der Datei.");
             setLoading(false);
             return;
@@ -74,7 +75,7 @@ const ManageLinks = () => {
 
         const linkUpdateBody = {
             id,
-            document: fileUrl, // Verwende fileUrl direkt
+            document: awsUrl, // Verwende fileUrl direkt
         };
 
         try {
