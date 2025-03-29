@@ -195,5 +195,6 @@ export default function Home() {
 
 export const metadata: Metadata = {
   title: "Skiclub Wehingen Homepage",
-  description: "Alle wichtigen Informationen über den Skiclub ",
+  description: "Alle wichtigen Informationen über den Skiclub: Mieten, Fossiliuslauf, Skilift, Preise, Skiliftpreise, Neuigkeiten, Rundmails, Blog, Infos",
+
 };

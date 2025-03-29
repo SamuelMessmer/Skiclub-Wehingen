@@ -1,6 +1,5 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Metadata } from "next";
 import React from "react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 const FormularKontakt = () => {
   return (
@@ -108,8 +107,3 @@ const FormularKontakt = () => {
 };
 
 export default FormularKontakt;
-
-export const metadata: Metadata = {
-  title: "Skihütte des Skiclub mieten",
-  description: "Alle wichtigen Informationen über das mieten der Skihütte des Skiclub Wehingen"
-}
