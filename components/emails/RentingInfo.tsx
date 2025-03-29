@@ -12,7 +12,7 @@ import {
 } from "@react-email/components";
 import * as React from "react";
 
-export const Info = (
+export const RentingInfo = (
     firstname: string,
     lastname: string,
     email: string,
@@ -54,11 +54,7 @@ export const Info = (
                     <Text style={paragraph}>{lastname}</Text>
 
                     <Text style={{ ...heading, marginBottom: "-20px" }}>E-Mail:</Text>
-                    <Text style={paragraph}>{email}</Text>
-
-                    <Text style={{ ...heading, marginBottom: "-20px" }}>
-                        Telefonnummer:
-                    </Text>
+                    <Text style={paragraph}>{email}</Text>d
 
                     <Text style={{ ...heading, marginBottom: "-20px" }}>Nachricht:</Text>
                     <Text style={paragraph}>{message}</Text>
@@ -82,7 +78,7 @@ export const Info = (
     </Html>
 );
 
-export default Info;
+export default RentingInfo;
 
 const main = {
     backgroundColor: "#dbddde",

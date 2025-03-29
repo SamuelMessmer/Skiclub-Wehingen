@@ -1,4 +1,4 @@
-import Info from "@/components/emails/Information";
+import { RentingInfo } from "@/components/emails/RentingInfo";
 import { Resend } from 'resend';
 import { NextRequest, NextResponse } from "next/server";
 
@@ -10,8 +10,8 @@ export async function POST(req: NextRequest) {
     const { error, data } = await resend.emails.send({
         from: "onboarding@resend.dev",
         to: ["samuel.messmer@web.de"],
-        subject: "Neue Kunden Anfrage auf deiner Website!",
-        react: Info(
+        subject: "Neue Miet Anfrage auf der Skiclub Website!",
+        react: RentingInfo(
             body.firstName,
             body.lastName,
             body.email,
