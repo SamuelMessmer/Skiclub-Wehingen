@@ -9,7 +9,7 @@ const NavBar = () => {
         className=" p-3 hover:scale-105 duration-150"
       >
         <div className="font-bold text-xl">
-          Neuenblog <br /> erstellen
+          Neuen Blog <br /> erstellen
         </div>
       </Link>
 

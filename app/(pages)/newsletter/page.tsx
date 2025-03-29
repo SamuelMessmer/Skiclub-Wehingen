@@ -36,7 +36,7 @@ const Newsletter = () => {
             AKTUELLES VOM SKICLUB
           </h1>
           <p className="text-orange-500 text-lg sm:text-2xl mx-4 self-start sm:self-auto">
-            Hier finden Sie die neusten Informationen über den Skiclub
+            Hier finden Sie die neuesten Informationen über den Skiclub
           </p>
         </div>
       </section>

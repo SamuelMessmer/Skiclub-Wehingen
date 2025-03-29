@@ -9,7 +9,7 @@ const Verein = () => {
       <section>
         <div className="flex flex-col justify-center items-center mx-20 max-w-fit mt-24 mb-16 ">
           <p className="text-orange-500 text-lg sm:text-2xl  -ml-14 -mb-4 md:mb-2 sm:self-auto ">
-            Der Ausschuss des Skiclub <b className="hidden sm:inline-block font-normal">Wehingen</b>
+            Der Ausschuss des Skiclubs <b className="hidden sm:inline-block font-normal">Wehingen</b>
           </p>
           <h1 className="font-extrabold text-[48px] sm:text-7xl sm1 xl:text-9xl tracking-tighter sm:mb-4 z-10">
             Abteilungsleitung
@@ -136,7 +136,7 @@ const Verein = () => {
       {/* VEREINSGESCHICHTE */}
       <section>
         <h1 className=" font-extrabold text-5xl sm:text-8xl sm1 xl:text-8xl tracking-tighter mb-5 sm:mb-4 z-10 md:mt-14  mx-8">
-          Die Entstehung des Fossiliuslauf
+          Die Entstehung des Fossiliuslaufs
         </h1>
         <div className="flex justify-end items-center lg:mx-14">
           <Image

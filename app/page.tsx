@@ -14,7 +14,7 @@ export default function Home() {
       <section>
         <div className="sm:flex flex-col sm:items-center gap-2 mt-12 mb-12 mx-3 sm:mt-48 sm:mb-16 md:mb-56">
           <p className="text-orange-500 text-lg sm:text-2xl self-start md:self-auto z-10">
-            Willkommen auf der Homepage des
+            Willkommen auf der unserer Homepage©
           </p>
 
           <div className="static z-0">

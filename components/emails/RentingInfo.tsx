@@ -54,7 +54,7 @@ export const RentingInfo = (
                     <Text style={paragraph}>{lastname}</Text>
 
                     <Text style={{ ...heading, marginBottom: "-20px" }}>E-Mail:</Text>
-                    <Text style={paragraph}>{email}</Text>d
+                    <Text style={paragraph}>{email}</Text>
 
                     <Text style={{ ...heading, marginBottom: "-20px" }}>Nachricht:</Text>
                     <Text style={paragraph}>{message}</Text>

@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
     const { error, data } = await resend.emails.send({
         from: "onboarding@resend.dev",
         to: ["samuel.messmer@web.de"],
-        subject: "Neue Miet Anfrage auf der Skiclub Website!",
+        subject: "Neue Mietanfrage auf der Skiclub Website!",
         react: RentingInfo(
             body.firstName,
             body.lastName,

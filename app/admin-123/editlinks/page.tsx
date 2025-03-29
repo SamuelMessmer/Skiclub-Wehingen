@@ -115,7 +115,7 @@ const ManageLinks = () => {
                 </h1>
 
                 <p className="mt-3 mb-10 ">
-                    Hier Können alle Links, die für Nutzer sichbar sind, bearbeitet werden
+                    Hier können alle Links die für Nutzer sichtbar sind, bearbeitet werden
                 </p>
 
                 <div className="w-full min-h-screen">
