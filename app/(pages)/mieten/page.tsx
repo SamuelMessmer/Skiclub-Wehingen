@@ -137,25 +137,23 @@ const FormularKontakt = () => {
                       />
                     </div>
 
-                    {/* FormResultUI - Responsive antwort */}
+                    {/* FormResultUI - Responsive antwortj */}
                     <div>
                       {!success && !error ?
                         <button
                           type="submit"
-                          className="bg-orange-500 text-white py-2 px-4 rounded-xl hover:bg-orange-600"
+                          className="bg-orange-500 text-white font-semibold py-2 px-4 rounded-xl hover:bg-orange-600"
                         >
-                          Nachricht Senden
+                          {loading ? "wird gesendet ..." : "Nachricht Senden"}
                         </button>
                         :
                         <p className="text-center mt-5 -mb-10">
-                          {loading && <p>wird gesendet ...</p>}
-
                           {success && (
                             <div>
                               <p className="mb-5" style={{ color: "green" }}>Nachricht wurde erfolgreich gesendet!</p>
                               <Link
                                 href={"/"}
-                                className="bg-orange-500 text-white py-2 px-4 rounded-xl hover:bg-orange-600"
+                                className="bg-orange-500 text-white font-semibold py-2 px-4 rounded-xl hover:bg-orange-600"
                               >
                                 Zurück
                               </Link>
@@ -170,7 +168,7 @@ const FormularKontakt = () => {
                                   // setLoading(false);
                                   // setError(false);
                                 }}
-                                className="bg-orange-500 text-white py-2 px-4 rounded-xl hover:bg-orange-600"
+                                className="bg-orange-500 text-white font-semibold py-2 px-4 rounded-xl hover:bg-orange-600"
                               >
                                 erneut versuchen
                               </Link>

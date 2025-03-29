@@ -76,15 +76,15 @@ export default function Home() {
       <section>
         <div className="bg-white mt-6">
           <div className="flex flex-col sticky top-24">
-            <Card className="bg-[#EFF7FF] mb-24 mx-4 md:mx-14 lg:mx-20 xl:mx-20 flex flex-col items-center md:flex-row md:items-center animate-zoom zoom ">
+            <Card className="bg-[#EFF7FF] mb-24 mx-4 sm:px-5 lg:mx-20 xl:mx-20 flex flex-col items-center xl:flex-row xl:items-center animate-zoom zoom ">
               <Image
                 src="/lift.jpg"
                 alt="lift groß"
                 width={1920}
                 height={1080}
-                className="hidden sm:block rounded-xl shadow-xl mt-12 md:mt-0 md:mx-5 lg:my-5 lg:h-[500px] lg:w-fit"
+                className="hidden sm:block rounded-xl shadow-xl mt-12 md:my-5 md:mx-5 xl:my-5 xl:h-[500px] xl:w-fit"
               />
-              <div className="sm:text-center md:text-left">
+              <div className="sm:text-center xl:text-left">
                 <CardHeader className="font-bold text-3xl lg:text-5xl ml-2 md:ml-0 text-orange-500">
                   Skilift des SC-Wehingen
                 </CardHeader>
@@ -114,22 +114,22 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col sticky top-10 bg-white">
-            <Card className="bg-orange-500 mb-0 mx-4 md:mx-14 lg:mx-20 xl:mx-20 2xl:pl-20 flex flex-col items-center md:flex-row md:justify-between md:items-center animate-zoom zoom">
+            <Card className="bg-orange-500 mb-0 mx-4 sm:px-5 lg:mx-20 xl:mx-20 2xl:pl-20 flex flex-col items-center xl:flex-row xl:justify-between xl:items-center animate-zoom zoom">
               <Image
                 src="/lauf-erwachsen.png"
-                alt="lauf-erwachsene groß"
+                alt="lauf-erwachsene klein"
                 width={1920}
                 height={1080}
-                className="hidden sm:block md:hidden rounded-xl shadow-xl mt-12 md:mt-0 md:mx-5 lg:my-5 lg:h-[500px] lg:w-fit"
+                className="hidden sm:block md:hidden rounded-xl shadow-xl mt-12 md:mx-5 md:my-5 lg:h-[500px] lg:w-fit"
               />
               <div className="sm:text-center md:text-left md:">
-                <CardHeader className="font-bold text-3xl lg:text-5xl ml-2 md:ml-0 text-white">
+                <CardHeader className="font-bold text-3xl lg:text-5xl ml-2 md:ml-0 text-white xl:pr-28">
                   Fossiliuslauf
                   <p className="font-normal text-xl ml-0 text-white block xl:hidden">
                     &quot;Laufen, wo die Alb am höchsten ist&quot;{" "}
                   </p>
                 </CardHeader>
-                <CardContent className="mb-14 sm:mb-0 w-[10px] hidden xl:block">
+                <CardContent className="mb-14 -ml-8 sm:mb-0 w-[10px] hidden xl:block">
                   <CustomTable></CustomTable>
                 </CardContent>
                 <CardContent className="font-bold text-lg text-white"></CardContent>
@@ -147,10 +147,10 @@ export default function Home() {
               </div>
               <Image
                 src="/lauf-erwachsen.png"
-                alt="lauf-erwachsene klein"
+                alt="lauf-erwachsene groß"
                 width={1920}
                 height={1080}
-                className="hidden md:block rounded-xl shadow-xl mt-12 md:mt-0 md:mx-5 lg:my-5 lg:h-[500px] lg:w-[720px]"
+                className="hidden md:block rounded-xl shadow-xl mt-12 md:my-5 md:mx-5 xl:my-5 xl:h-[500px] xl:w-fit"
               />
             </Card>
             <Image

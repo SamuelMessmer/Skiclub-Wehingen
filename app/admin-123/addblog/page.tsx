@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import NavbarAdmin from "../components/NavbarAdmin";
 import { UploadResult } from "@/app/api/s3-upload/upload-strategy.util";
+import Link from "next/link";
 
 const CreateBlog = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -71,6 +72,10 @@ const CreateBlog = () => {
       setFile(null); // Setze img zurück auf null
       location.replace("/admin-123");
     } catch (error) {
+      setLoading(false)
+      setTitle("")
+      setContent("")
+      setFile(null)
       setError("Fehler beim Speichern")
       console.log("Hier ist der Fehler: " + error)
     }
@@ -139,7 +144,12 @@ const CreateBlog = () => {
             </button>
           </div>
 
-          {error && <p style={{ color: "red" }}>{error}</p>}
+          {error && (<div>
+            <p style={{ color: "red" }}>{error}</p>
+            <Link href={"/k"}>
+            
+            </Link>
+          </div>)}
           {success && <p style={{ color: "green" }}>{success}</p>}
         </div>
       </form>

@@ -22,10 +22,10 @@ const Fossiliuslauf = () => {
       <section>
         <div className="bg-white mt-10">
           <div className="flex flex-col sticky top-24">
-            <Card className="bg-sky-100 mb-24 mx-4 md:mx-14 flex flex-col items-center md:flex-row md:items-center sm:p-8 md:p-0 animate-zoom zoom">
+            <Card className="bg-sky-100 mb-24 mx-4 sm:p-5 lg:mx-20 xl:mx-20 2xl:pl-20 flex flex-col items-center xl:flex-row xl:justify-between xl:items-center animate-zoom zoom">
               <Image
                 src="/lauf-erwachsen.png"
-                alt="Logo Picture"
+                alt="Bild groß"
                 width={1920}
                 height={1080}
                 className="hidden sm:block rounded-xl shadow-xl sm:min-h-xl sm:min-w-xl md:mt-0 md:mx-5 lg:my-5 lg:h-[500px] lg:w-[720px]"
@@ -55,7 +55,7 @@ const Fossiliuslauf = () => {
             </Card>
             <Image
               src="/lauf-erwachsen.png"
-              alt="Logo Picture"
+              alt="Bild klein"
               width={1920}
               height={1080}
               className="z-20 self-start rounded-xl shadow-xl h-[130px] w-[240px] sm:hidden mb-5 -mt-44 sm:-mt-80 mx-1"
@@ -63,10 +63,10 @@ const Fossiliuslauf = () => {
           </div>
 
           <div className="flex flex-col sticky top-24 bg-white">
-            <Card className="bg-orange-500 mb-24 mx-4 md:mx-14 flex flex-col items-center md:flex-row md:justify-between md:items-center sm:p-8 md:p-0  animate-zoom zoom">
+            <Card className="bg-orange-500  mb-24 mx-4 sm:p-5 lg:mx-20 xl:mx-20 2xl:pl-20 flex flex-col items-center xl:flex-row xl:justify-between xl:items-center animate-zoom zoom">
               <Image
                 src="/lauf-jung.png"
-                alt="Logo Picture"
+                alt="Bild mittel klein"
                 width={1920}
                 height={1080}
                 className="hidden sm:block md:hidden rounded-xl shadow-xl md:mt-0 md:mx-5 lg:my-5 lg:h-[500px] lg:w-[720px]"
@@ -87,7 +87,7 @@ const Fossiliuslauf = () => {
               </div>
               <Image
                 src="/lauf-jung.png"
-                alt="Logo Picture"
+                alt="Bild groß"
                 width={1920}
                 height={1080}
                 className="hidden md:block rounded-xl shadow-xl mt-12 md:mt-0 md:mx-5 lg:my-5 lg:h-[500px] lg:w-[720px]"
@@ -95,7 +95,7 @@ const Fossiliuslauf = () => {
             </Card>
             <Image
               src="/lauf-jung.png"
-              alt="Logo Picture"
+              alt="Bild ganz klein unten links"
               width={1920}
               height={1080}
               className="z-20 self-end rounded-xl shadow-xl h-[130px] w-[240px] sm:hidden mb-14 -mt-40 sm:-mt-80 mx-1"
@@ -103,10 +103,10 @@ const Fossiliuslauf = () => {
           </div>
 
           <div className="flex flex-col sticky top-24 bg-white">
-            <Card className="bg-slate-700 mb-24 mx-4 md:mx-14 flex flex-col items-center md:flex-row md:items-center sm:p-8 md:p-0  animate-zoom zoom">
+            <Card className="bg-slate-700  mb-24 mx-4 sm:p-5 lg:mx-20 xl:mx-20 2xl:pl-20 flex flex-col items-center xl:flex-row xl:justify-between xl:items-center animate-zoom zoom">
               <Image
                 src="/lauf-kinder.png"
-                alt="Logo Picture"
+                alt="Bild groß"
                 width={1920}
                 height={1080}
                 className="hidden sm:block rounded-xl shadow-xl md:mt-0 md:mx-5 lg:my-5 lg:h-[500px] lg:w-[720px]"
@@ -138,7 +138,7 @@ const Fossiliuslauf = () => {
             </Card>
             <Image
               src="/lauf-kinder.png"
-              alt="Logo Picture"
+              alt="Bild kleinj"
               width={1920}
               height={1080}
               className="z-20 self-start rounded-xl shadow-xl h-[130px] w-[240px] sm:hidden mb-5 -mt-36 sm:-mt-80 mx-1"
@@ -158,7 +158,7 @@ const Fossiliuslauf = () => {
             alt="Logo Picture"
             width={1920}
             height={1080}
-            className="hidden md:block w-[550px] h-fit z-0"
+            className="hidden xl:block w-[550px] h-fit z-0"
           />
           <DynamicLinkList />
         </div>
