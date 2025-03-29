@@ -7,14 +7,11 @@ const Footer = () => {
       <p>&copy;Design Required for Terms</p>
 
       <div className="flex flex-col gap-2 sm:flex-row sm:gap-10">
-        <Link href="/">
+        <Link href="/impressum">
           <p>Impressum</p>
         </Link>
-        <Link href="/">
+        <Link href="/datenschutz">
           <p>Datenschutz</p>
-        </Link>
-        <Link href="/">
-          <p>Organisation</p>
         </Link>
       </div>
     </div>
