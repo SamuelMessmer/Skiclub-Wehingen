@@ -1,7 +1,45 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import Link from "next/link";
 
 const FormularKontakt = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true);
+
+    const emailData = {
+      firstName,
+      lastName,
+      email,
+      message,
+    }
+
+    const response = await fetch("api/emails", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(emailData)
+    });
+
+    setLoading(false)
+
+    if (!response.ok) {
+      setError(true)
+      return;
+    }
+
+    setSuccess(true)
+  }
+
   return (
     <div>
       <section>
@@ -27,15 +65,17 @@ const FormularKontakt = () => {
                 </CardHeader>
                 <CardContent className="text-lg sm:mb-4">
                   <form
-                    action="https://api.web3forms.com/submit"
+                    // action="https://api.web3forms.com/submit"
+                    onSubmit={handleSubmit}
                     method="POST"
+                    action={""} //safari auto fill umgehen
                     className="mb-10"
                   >
-                    <input
+                    {/* <input
                       type="hidden"
                       name="access_key"
                       value="cad5a6f2-8ca8-4c75-aa28-2c42ee8905ec"
-                    />
+                    /> */}
 
                     <div className="flex w-full gap-5 sm:gap-10 mb-4">
                       <div>
@@ -45,8 +85,10 @@ const FormularKontakt = () => {
                         <input
                           type="text"
                           name="Vorname"
-                          className="p-2 border border-orange-200 rounded-xl w-full"
+                          value={firstName}
+                          onChange={(e) => setFirstName(e.target.value)}
                           placeholder="Ihren Name"
+                          className="p-2 border border-orange-200 rounded-xl w-full"
                           required
                         />
                       </div>
@@ -57,8 +99,10 @@ const FormularKontakt = () => {
                         <input
                           type="text"
                           name="Nachname"
-                          className="p-2 border border-orange-200 rounded-xl w-full"
+                          value={lastName}
+                          onChange={(e) => setLastName(e.target.value)}
                           placeholder="Ihren Name"
+                          className="p-2 border border-orange-200 rounded-xl w-full"
                           required
                         />
                       </div>
@@ -71,8 +115,10 @@ const FormularKontakt = () => {
                       <input
                         type="email"
                         name="E-Mail"
-                        className="p-2 border border-orange-200 rounded-xl w-full"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         placeholder="Inhalt eingeben"
+                        className="p-2 border border-orange-200 rounded-xl w-full"
                         required
                       />
                     </div>
@@ -83,18 +129,56 @@ const FormularKontakt = () => {
                       </label>
                       <textarea
                         name="Nachricht"
-                        className="p-2 border border-orange-200 rounded-xl w-full h-56"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
                         placeholder="Ihre Nachricht - Wann Sie die Skihütte mieten möchten"
+                        className="p-2 border border-orange-200 rounded-xl w-full h-56"
                         required
                       />
                     </div>
 
-                    <button
-                      type="submit"
-                      className="bg-orange-500 text-white py-2 px-4 rounded-xl hover:bg-orange-600"
-                    >
-                      Nachricht senden
-                    </button>
+                    {/* FormResultUI - Responsive antwort */}
+                    <div>
+                      {!success && !error ?
+                        <button
+                          type="submit"
+                          className="bg-orange-500 text-white py-2 px-4 rounded-xl hover:bg-orange-600"
+                        >
+                          Nachricht Senden
+                        </button>
+                        :
+                        <p className="text-center mt-5 -mb-10">
+                          {loading && <p>wird gesendet ...</p>}
+
+                          {success && (
+                            <div>
+                              <p className="mb-5" style={{ color: "green" }}>Nachricht wurde erfolgreich gesendet!</p>
+                              <Link
+                                href={"/"}
+                                className="bg-orange-500 text-white py-2 px-4 rounded-xl hover:bg-orange-600"
+                              >
+                                Zurück
+                              </Link>
+                            </div>
+                          )}
+                          {error && (
+                            <div>
+                              <p className="mb-5" style={{ color: "red" }}>Senden Fehlgeschlagen :(</p>
+                              <Link
+                                href={"/"}
+                                onClick={() => {
+                                  // setLoading(false);
+                                  // setError(false);
+                                }}
+                                className="bg-orange-500 text-white py-2 px-4 rounded-xl hover:bg-orange-600"
+                              >
+                                erneut versuchen
+                              </Link>
+                            </div>
+                          )}
+                        </p>
+                      }
+                    </div>
                   </form>
                 </CardContent>
               </div>
@@ -105,5 +189,7 @@ const FormularKontakt = () => {
     </div>
   );
 };
+
+
 
 export default FormularKontakt;
