@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="de">
       <head>
-        <link rel="icon" href="/skifahrer2.jpg" />
+        <link rel="icon" href="/favicon-skiclub.png"/>
 
       </head>
       <body
