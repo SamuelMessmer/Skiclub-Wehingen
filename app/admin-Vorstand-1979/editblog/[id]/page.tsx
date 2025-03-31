@@ -83,7 +83,7 @@ const EditBlog = () => {
         const data = await response.json();
         setSuccess("Blog erfolgreich aktualisiert!");
         setBlog(data);
-        location.replace("/admin-123");
+        location.replace("/admin-Vorstand-1979");
       }
     } catch (error) {
       setError("Ein unerwarteter Fehler ist aufgetreten.");

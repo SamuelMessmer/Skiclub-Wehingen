@@ -15,7 +15,7 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({ blogId }) => {
         console.log(error)
       }
     }
-    location.replace("/admin-123")
+    location.replace("/admin-Vorstand-1979")
   };
 
   return <button onClick={handleDelete} className='w-full text-left'>Löschen</button>;

@@ -70,7 +70,7 @@ const CreateBlog = () => {
       setContent("");
       setLoading(false);
       setFile(null); // Setze img zurück auf null
-      location.replace("/admin-123");
+      location.replace("/admin-Vorstand-1979");
     } catch (error) {
       setLoading(false)
       setTitle("")

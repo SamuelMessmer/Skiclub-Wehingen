@@ -75,7 +75,7 @@ const AdminDashboard = () => {
                         onValueChange={setPosition}
                         className="mt-2"
                       >
-                        <Link href="/admin-123">
+                        <Link href="/admin-Vorstand-1979">
                           <DropdownMenuRadioItem
                             value="top"
                             className="hover:bg-gray-00 hover:cursor-pointer py-1 px-2 rounded-lg"
@@ -83,7 +83,7 @@ const AdminDashboard = () => {
                             <DeleteButton blogId={blog.id} />
                           </DropdownMenuRadioItem>
                         </Link>
-                        <Link href="/admin-123/editblog">
+                        <Link href="/admin-Vorstand-1979/editblog">
                           <DropdownMenuRadioItem
                             value="top"
                             className="hover:bg-gray-00 hover:cursor-pointer py-1 px-2 rounded-lg"

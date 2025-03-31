@@ -7,7 +7,7 @@ interface EditBlogButtonProps {
 
 const EditBlogButton: React.FC<EditBlogButtonProps> = ({ blogId }) => {
   const handleDelete = () => {
-    location.replace(`/admin-123/editblog/${blogId}`);
+    location.replace(`/admin-Vorstand-1979/editblog/${blogId}`);
   };
 
   return (
