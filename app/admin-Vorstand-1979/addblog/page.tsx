@@ -1,8 +1,8 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 import NavbarAdmin from "../components/NavbarAdmin";
 import { UploadResult } from "@/app/api/s3-upload/upload-strategy.util";
-import Link from "next/link";
 
 const CreateBlog = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -30,8 +30,8 @@ const CreateBlog = () => {
       return result.fileUrl;
 
     } catch (error) {
-      setError("Fehler beim Hochladen des Bildes.");
       console.log(error)
+      setError("Fehler beim Hochladen des Bildes.");
     }
   };
 
@@ -146,8 +146,11 @@ const CreateBlog = () => {
 
           {error && (<div>
             <p style={{ color: "red" }}>{error}</p>
-            <Link href={"/k"}>
-            
+            <Link
+              href={"/"}
+              className="bg-orange-500 text-white font-semibold py-2 px-4 rounded-xl hover:bg-orange-600"
+            >
+              erneut versuchen
             </Link>
           </div>)}
           {success && <p style={{ color: "green" }}>{success}</p>}

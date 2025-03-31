@@ -12,6 +12,7 @@ import { DropdownMenu } from "@radix-ui/react-dropdown-menu";
 import React, { useEffect, useState } from "react";
 import NavbarAdmin from "../components/NavbarAdmin";
 import { UploadResult } from "@/app/api/s3-upload/upload-strategy.util";
+import Link from "next/link";
 
 const ERROR_MESSAGE: string = 'Ein Fehler ist aufgetreten';
 
@@ -163,7 +164,17 @@ const ManageLinks = () => {
                                                         </span>
                                                     </Button>
                                                     <div className="text-md font-semibold flex justify-center">
-                                                        {error && <p style={{ color: "red" }}>{error}</p>}
+                                                        {error &&
+                                                            <div>
+                                                                <p style={{ color: "red" }}>{error}</p>
+                                                                <Link
+                                                                    href={"/"}
+                                                                    className="bg-orange-500 text-white font-semibold py-2 px-4 rounded-xl hover:bg-orange-600"
+                                                                >
+                                                                    erneut versuchen
+                                                                </Link>
+                                                            </div>
+                                                        }
                                                         {success && <p style={{ color: "green" }}>{success}</p>}
                                                     </div>
                                                 </form>
