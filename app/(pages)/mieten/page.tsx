@@ -49,7 +49,7 @@ const FormularKontakt = () => {
           </h1>
           <p className="text-orange-500 text-lg sm:text-2xl mx-4 md:self-center md:mx-12 sm:text-center">
             Kontaktieren Sie unseren Hüttenwart und vereinbaren Sie mit ihm
-            einen geiegneten Termin zur hüttenmietung!
+            einen geiegneten Termin zur Hüttenmietung!
           </p>
         </div>
       </section>
