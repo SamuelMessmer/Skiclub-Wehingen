@@ -9,11 +9,11 @@ const Impressum = () => {
                 <div className="bg-gray-50 p-4 rounded-lg">
                     <p className="font-semibold">Skiclub Wehingen e.V.</p>
                     <p>Vertreten durch den 1. Vorsitzenden:</p>
-                    <p className="mt-2 font-medium">Walter Staiger</p>
-                    <p>Bogenstr. 23</p>
-                    <p>78564 Wehingen</p>
+                    <p className="mt-2 font-medium">Horst Weible</p>
+                    <p>Rebbergweg 5</p>
+                    <p>79798 Jestetten</p>
                     <p className="mt-3">
-                        Telefon: <a href="tel:+497426520364" className="text-orange-500 hover:underline">07426 520364</a>
+                        Telefon: <a href="tel:+497426520364" className="text-orange-500 hover:underline">07745 922688</a>
                     </p>
                     <p>
                         E-Mail: <a href="mailto:vorstand@sc-wehingen.de" className="text-orange-500 hover:underline">vorstand@sc-wehingen.de</a>

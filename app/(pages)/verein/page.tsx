@@ -11,7 +11,7 @@ const Verein = () => {
           <p className="text-orange-500 text-lg sm:text-2xl  -ml-14 -mb-4 md:mb-2 sm:self-auto ">
             Der Ausschuss des Skiclubs <b className="hidden sm:inline-block font-normal">Wehingen</b>
           </p>
-          <h1 className="font-extrabold text-[48px] sm:text-7xl sm1 xl:text-9xl tracking-tighter sm:mb-4 z-10">
+          <h1 className="font-extrabold text-[48px] sm:text-7xl xl:text-9xl tracking-tighter sm:mb-4 z-10">
             Abteilungsleitung
           </h1>
 
