@@ -23,6 +23,6 @@ model Blog {
 
 model LinkData {
   id       Int    @id @default(autoincrement())
-  name     String @unique
+  name     String 
   document String
 }
