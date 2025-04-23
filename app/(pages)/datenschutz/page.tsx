@@ -40,13 +40,15 @@ const Datenschutz = () => {
                 </p>
                 <div className="mb-4">
                     <p className="font-semibold">Skiclub Wehingen e.V.</p>
-                    <p>1. Vorsitzender: Walter Staiger</p>
-                    <p>Bogenstr. 23</p>
-                    <p>78564 Wehingen</p>
-                    <p>Tel.: 07426 / 520364</p>
-                    <a href="mailto:walter@sc-wehingen.de" className="text-orange-500 hover:underline">
-                        walter@sc-wehingen.de
-                    </a>
+                    <p>1. Vorsitzender: Horst Weible</p>
+                    <p>Rebbergweg 5</p>
+                    <p>79798 Jestetten</p>
+                    <p className="mt-3">
+                        Telefon: <a href="tel:+497426520364" className="text-orange-500 hover:underline">07745 922688</a>
+                    </p>
+                    <p>
+                        E-Mail: <a href="mailto:vorstand@sc-wehingen.de" className="text-orange-500 hover:underline">vorstand@sc-wehingen.de</a>
+                    </p>
                 </div>
             </section>
 
@@ -69,7 +71,7 @@ const Datenschutz = () => {
                 </p>
                 <p className="mb-4">
                     Durch den Einsatz von Cookies kann der Skiclub Wehingen den Nutzern dieser Internetseite nutzerfreundlichere Services bereitstellen,
-                    die ohne die Cookie-Setzung nicht möglich wären. 
+                    die ohne die Cookie-Setzung nicht möglich wären.
                 </p>
                 <p className="mb-4">
                     Die betroffene Person kann die Setzung von Cookies durch unsere Internetseite jederzeit mittels entsprechender Einstellung des
@@ -143,10 +145,10 @@ const Datenschutz = () => {
                 <p className="mb-4">
                     Sie haben das Recht, sich bei der zuständigen Aufsichtsbehörde zu beschweren:
                     <br />
-                    <a 
-                        href="https://www.baden-wuerttemberg.datenschutz.de/" 
+                    <a
+                        href="https://www.baden-wuerttemberg.datenschutz.de/"
                         className="text-orange-500 hover:underline"
-                        target="_blank" 
+                        target="_blank"
                         rel="noopener noreferrer"
                     >
                         Landesbeauftragter für Datenschutz Baden-Württemberg
@@ -172,8 +174,8 @@ const Datenschutz = () => {
                 <p>
                     Bei Fragen zum Datenschutz erreichen Sie uns unter:
                     <br />
-                    <a 
-                        href="mailto:datenschutz@sc-wehingen.de" 
+                    <a
+                        href="mailto:datenschutz@sc-wehingen.de"
                         className="text-orange-500 hover:underline"
                     >
                         datenschutz@sc-wehingen.de
