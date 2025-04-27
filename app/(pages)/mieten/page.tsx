@@ -131,7 +131,7 @@ const FormularKontakt = () => {
                         name="Nachricht"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
-                        placeholder="Ihre Nachricht - Wann Sie die Skihütte mieten möchten"
+                        placeholder="Ihre Nachricht - Wann Sie die Skihütte mieten möchten, wie Sie diese verwenden möchten"
                         className="p-2 border border-orange-200 rounded-xl w-full h-56"
                         required
                       />
