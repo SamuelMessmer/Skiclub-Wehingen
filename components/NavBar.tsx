@@ -70,16 +70,16 @@ const NavBar = () => {
         <div className={Display ? "block" : "hidden duration-150"}>
           <div className="absolute right-1 w-44 rounded-lg bg-orange-500 px-5 py-4 z-auto animate-slideInFromTop slideInFromTop duration-500">
             <div className="flex flex-col justify-start text-white font-bold">
-              <Link href="/" className={"py-3 px-3"}>
+              <Link href="/" className={"py-3 px-3"} onClick={showHamburgerMenu}>
                 Startseite
               </Link>
-              <Link href="/fossiliuslauf" className="py-3 px-3">
+              <Link href="/fossiliuslauf" className="py-3 px-3" onClick={showHamburgerMenu}>
                 Fossiliuslauf
               </Link>
-              <Link href="/newsletter" className="py-3  px-3">
+              <Link href="/newsletter" className="py-3  px-3" onClick={showHamburgerMenu}>
                 Newsletter
               </Link>
-              <Link href="/verein" className="py-3  px-3">
+              <Link href="/verein" className="py-3  px-3" onClick={showHamburgerMenu}>
                 Verein
               </Link>
 
