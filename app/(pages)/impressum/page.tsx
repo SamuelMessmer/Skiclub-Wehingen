@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
+
 const Impressum = () => {
     return (
         <div className="my-28 max-w-3xl mx-auto p-6 text-gray-800">
@@ -37,29 +40,29 @@ const Impressum = () => {
 
                 <h3 className="text-xl font-semibold mt-4 mb-2">1. Inhalt des Onlineangebotes</h3>
                 <p className="mb-4">
-                    Der Verein übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der 
+                    Der Verein übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der
                     bereitgestellten Informationen.
                 </p>
 
                 <h3 className="text-xl font-semibold mt-4 mb-2">2. Verweise und Links</h3>
                 <p className="mb-4">
-                Für direkte oder indirekte Verweise auf fremde Webseiten (Hyperlinks), die außerhalb des Verantwortungsbereiches 
-                des Vereins liegen, würde eine Haftungsverpflichtung ausschließlich in dem Fall in Kraft treten, in dem der Verein 
-                von den Inhalten Kenntnis hat und es ihm technisch möglich und zumutbar wäre, die Nutzung im Falle rechtswidriger 
-                Inhalte zu verhindern.
+                    Für direkte oder indirekte Verweise auf fremde Webseiten (Hyperlinks), die außerhalb des Verantwortungsbereiches
+                    des Vereins liegen, würde eine Haftungsverpflichtung ausschließlich in dem Fall in Kraft treten, in dem der Verein
+                    von den Inhalten Kenntnis hat und es ihm technisch möglich und zumutbar wäre, die Nutzung im Falle rechtswidriger
+                    Inhalte zu verhindern.
                 </p>
                 <p className="mb-4">
-                    Der Verein erklärt hiermit ausdrücklich, dass zum Zeitpunkt der Linksetzung keine illegalen Inhalte auf 
-                    den zu verlinkenden Seiten erkennbar waren. Auf die aktuelle und zukünftige Gestaltung, die Inhalte oder 
-                    die Urheberschaft der verlinkten/verknüpften Seiten hat der Verein keinerlei Einfluss. Deshalb distanziert 
-                    er sich hiermit ausdrücklich von allen Inhalten aller verlinkten/verknüpften Seiten, die nach der Linksetzung 
+                    Der Verein erklärt hiermit ausdrücklich, dass zum Zeitpunkt der Linksetzung keine illegalen Inhalte auf
+                    den zu verlinkenden Seiten erkennbar waren. Auf die aktuelle und zukünftige Gestaltung, die Inhalte oder
+                    die Urheberschaft der verlinkten/verknüpften Seiten hat der Verein keinerlei Einfluss. Deshalb distanziert
+                    er sich hiermit ausdrücklich von allen Inhalten aller verlinkten/verknüpften Seiten, die nach der Linksetzung
                     verändert wurden.
                 </p>
 
                 <h3 className="text-xl font-semibold mt-4 mb-2">3. Urheber- und Kennzeichenrecht</h3>
                 <p className="mb-4">
-                    Alle auf dieser Website veröffentlichten Inhalte (Texte, Bilder, Grafiken, Logos) unterliegen dem deutschen 
-                    Urheberrecht. Jede vom deutschen Urheberrecht nicht zugelassene Verwertung bedarf vorheriger schriftlicher 
+                    Alle auf dieser Website veröffentlichten Inhalte (Texte, Bilder, Grafiken, Logos) unterliegen dem deutschen
+                    Urheberrecht. Jede vom deutschen Urheberrecht nicht zugelassene Verwertung bedarf vorheriger schriftlicher
                     Zustimmung des Vereins.
                 </p>
             </section>
@@ -79,13 +82,27 @@ const Impressum = () => {
                     </a>
                 </p>
                 <p>
-                    Wir sind nicht verpflichtet und nicht bereit, an einem Streitbeilegungsverfahren vor einer 
+                    Wir sind nicht verpflichtet und nicht bereit, an einem Streitbeilegungsverfahren vor einer
                     Verbraucherschlichtungsstelle teilzunehmen.
                 </p>
             </section>
 
+            {/* Werbung für mich */}
+            <div className="mt-8 py-4 border-t text-sm text-gray-500">
+                <p>Diese Webseite wurde von Samuel Meßmer Designed und selbstständig programmiert. </p>
+                <Link
+                    href={"https://github.com/samuelmessmer"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex gap-2"
+                >
+                    Mein GitHub-Profil für mehr Informationen:
+                    <FaGithub size={25} className="hover:scale-125 duration-250" />
+                </Link>
+            </div>
+
             {/* Aktualitätshinweis */}
-            <div className="mt-8 pt-4 border-t text-sm text-gray-500">
+            <div className="pt-4 border-t text-sm text-gray-500">
                 <p>Dieses Impressum wurde zuletzt aktualisiert am 01. Januar 2024</p>
             </div>
         </div>
