@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { useEffect, useState, useRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const NavBar = () => {
   const [Display, setDisplay] = useState(false);
@@ -67,35 +68,79 @@ const NavBar = () => {
           />
         </button>
 
-        <div className={Display ? "block" : "hidden duration-150"}>
-          <div className="absolute right-1 w-44 rounded-lg bg-orange-500 px-5 py-4 z-auto animate-slideInFromTop slideInFromTop duration-500">
-            <div className="flex flex-col justify-start text-white font-bold">
-              <Link href="/" className={"py-3 px-3"} onClick={showHamburgerMenu}>
-                Startseite
-              </Link>
-              <Link href="/fossiliuslauf" className="py-3 px-3" onClick={showHamburgerMenu}>
-                Fossiliuslauf
-              </Link>
-              <Link href="/newsletter" className="py-3  px-3" onClick={showHamburgerMenu}>
-                Newsletter
-              </Link>
-              <Link href="/verein" className="py-3  px-3" onClick={showHamburgerMenu}>
-                Verein
-              </Link>
 
-              <a href={link}
-                target={"_blank"}
-                rel="noopener noreferrer"
-              >
-                <Button className="bg-white  hover:bg-gray-100 shadow-md">
-                  <span className="font-bold text-black shadow-sm">
-                    Mitglied werden
-                  </span>
-                </Button>
-              </a>
-            </div>
+        <AnimatePresence>
+          {Display && (
+            <motion.div
+              key="menu"
+              initial={{ opacity: 0, y: -200 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -200 }}
+              transition={{ duration: 0.3 }}
+            >
+              {/* <div className="absolute right-1 w-44 rounded-lg bg-orange-500 px-5 py-4 z-auto animate-slideInFromTop slideInFromTop duration-500"> */}
+              <div className="absolute right-1 w-44 rounded-lg bg-orange-500 px-5 py-4 z-auto ">
+                <div className="flex flex-col justify-start text-white font-bold">
+                  <Link href="/" className={"py-3 px-3"} onClick={showHamburgerMenu}>
+                    Startseite
+                  </Link>
+                  <Link href="/fossiliuslauf" className="py-3 px-3" onClick={showHamburgerMenu}>
+                    Fossiliuslauf
+                  </Link>
+                  <Link href="/newsletter" className="py-3  px-3" onClick={showHamburgerMenu}>
+                    Newsletter
+                  </Link>
+                  <Link href="/verein" className="py-3  px-3" onClick={showHamburgerMenu}>
+                    Verein
+                  </Link>
+
+                  <Link href={link}
+                    target={"_blank"}
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="bg-white  hover:bg-gray-100 shadow-md">
+                      <span className="font-bold text-black shadow-sm">
+                        Mitglied werden
+                      </span>
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+
+        {/* <div className={Display ? "block" : "hidden duration-150"}>
+        <div className="absolute right-1 w-44 rounded-lg bg-orange-500 px-5 py-4 z-auto animate-slideInFromTop slideInFromTop duration-500">
+          <div className="flex flex-col justify-start text-white font-bold">
+            <Link href="/" className={"py-3 px-3"} onClick={showHamburgerMenu}>
+              Startseite
+            </Link>
+            <Link href="/fossiliuslauf" className="py-3 px-3" onClick={showHamburgerMenu}>
+              Fossiliuslauf
+            </Link>
+            <Link href="/newsletter" className="py-3  px-3" onClick={showHamburgerMenu}>
+              Newsletter
+            </Link>
+            <Link href="/verein" className="py-3  px-3" onClick={showHamburgerMenu}>
+              Verein
+            </Link>
+
+            <a href={link}
+              target={"_blank"}
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-white  hover:bg-gray-100 shadow-md">
+                <span className="font-bold text-black shadow-sm">
+                  Mitglied werden
+                </span>
+              </Button>
+            </a>
           </div>
         </div>
+      </div>
+    </div> */}
       </div>
 
       {/* DESKTOP DESIGN */}
@@ -141,7 +186,7 @@ const NavBar = () => {
           </Button>
         </a>
       </div>
-    </div>
+    </div >
   );
 };
 
