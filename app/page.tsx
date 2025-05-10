@@ -62,7 +62,7 @@ export default function Home() {
       {/* NEWS BANNER */}
       <section>
         <div className="bg-slate-700 px-16 pt-12 sm:p-6 pb-12 flex flex-col justify-center items-center">
-          <div className="hidden sm:block py-6 ml-4 sm:ml-10 lg:ml-20 xl:ml-60 self-start">
+          <div className="hidden sm:block py-6 ml-4 sm:ml-5 lg:ml-10 xl:ml-60 self-start">
             <h1 className="text-orange-500 font-bold text-6xl">
               Unser Newsletter:
             </h1>

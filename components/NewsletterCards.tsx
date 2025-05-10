@@ -66,7 +66,7 @@ const NewsletterCards: React.FC = () => {
                     alt="Logo Picture"
                     width={1920}
                     height={1080}
-                    className="rounded-xl shadow-xl h-[400px] w-[380px] object-cover mb-5 hover:scale-105 duration-150"
+                    className="rounded-xl shadow-xl h-fit w-[380px] object-cover mb-5 hover:scale-105 duration-150"
                   />
                 </Link>
                 <h2 className="self-start text-orange-500 font-semibold text-xl">

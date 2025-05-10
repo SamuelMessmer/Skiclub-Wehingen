@@ -52,7 +52,7 @@ const Newsletter = () => {
                   alt="Logo Picture"
                   width={1920}
                   height={1080}
-                  className="hidden sm:block rounded-xl shadow-xl md:mt-5 md:mx-5 lg:my-5 lg:h-[520px] w-fit max-h-[620px] object-cover hover:scale-105 duration-150"
+                  className="hidden sm:block rounded-xl shadow-xl md:mt-5 md:mx-5 lg:my-5 lg:h-[520px] max-w-fit max-h-[620px] object-cover hover:scale-105 duration-150"
                 />
                 <div>
                   <CardHeader className="font-bold text-3xl lg:text-5xl -ml-2 mb-4 text-orange-500">
@@ -66,7 +66,7 @@ const Newsletter = () => {
               </Card>
               <Image
                 src={blog.img}
-                alt="Blog bild"
+                alt="Blog build"
                 width={1920}
                 height={1080}
                 className="z-20 self-start rounded-xl shadow-xl h-[130px] w-[240px] object-cover sm:hidden mb-5 -mt-44 sm:-mt-80 mx-1 hover:scale-105 duration-150"
