@@ -17,27 +17,21 @@ const Verein = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 text-center items-baseline gap-x-12 gap-y-4 mt-20">
             <div className="flex flex-col items-center justify-baseline">
-              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450}/>
+              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
-              <h3 className="text-md mb-2">Horst Weible</h3>
+              <h3 className="text-md mb-2">Gerd Linse</h3>
               <hr className="w-full" />
               <p>1. Vorstand</p>
-              <a
-                className="text-black font-bold"
-                href="mailto:horst@sc-wehingen.de"
-              >
-                horst@sc-wehingen.de
-              </a>
             </div>
             <div className="flex flex-col items-center justify-baseline">
-              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450}/>
+              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
-              <h3 className="text-md mb-2">Albert Messmer</h3>
+              <h3 className="text-md mb-2">Katha Heyer</h3>
               <hr className="w-full" />
               <p>2. Vorstand</p>
             </div>
             <div className="flex flex-col items-center justify-baseline">
-              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450}/>
+              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
               <h3 className="text-md mb-2">Reimar Oelte</h3>
               <hr className="w-full" />
@@ -50,11 +44,11 @@ const Verein = () => {
               </a>
             </div>
             <div className="flex flex-col items-center justify-baseline">
-              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450}/>
+              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
-              <h3 className="text-md mb-2">Siegfried Bradler</h3>
+              <h3 className="text-md mb-2">Daniel Rieger</h3>
               <hr className="w-full" />
-              <p>Jugendleiter</p>
+              <p>Schriftführer</p>
               <a
                 className="text-black font-bold"
                 href="mailto:siegfried@sc-wehingen.de"
@@ -63,7 +57,7 @@ const Verein = () => {
               </a>
             </div>
             <div className="flex flex-col items-center justify-baseline">
-              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450}/>
+              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
               <h3 className="text-md mb-2">Rüdiger Tack</h3>
               <hr className="w-full" />
@@ -76,11 +70,11 @@ const Verein = () => {
               </a>
             </div>
             <div className="flex flex-col items-center justify-baseline">
-              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450}/>
+              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
               <h3 className="text-md mb-2">Johannes Klaiber</h3>
               <hr className="w-full" />
-              <p>Sportwart alpin</p>
+              <p>Beisitzer</p>
               <a
                 className="text-black font-bold"
                 href="mailto:johannes@sc-wehingen.de"
@@ -89,11 +83,11 @@ const Verein = () => {
               </a>
             </div>
             <div className="flex flex-col items-center justify-baseline">
-              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450}/>
+              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
               <h3 className="text-md mb-2">Fabian Rees</h3>
               <hr className="w-full" />
-              <p>Sportwart nordisch</p>
+              <p>Beisitzer</p>
               <a
                 className="text-black font-bold"
                 href="mailto:fabian@sc-wehingen.de"
@@ -102,30 +96,23 @@ const Verein = () => {
               </a>
             </div>
             <div className="flex flex-col items-center justify-baseline">
-              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450}/>
+              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
               <h3 className="text-md mb-2">Melanie Messmer</h3>
               <hr className="w-full" />
               <p>Beisitzer</p>
             </div>
             <div className="flex flex-col items-center justify-baseline">
-              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450}/>
+              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
-              <h3 className="text-md mb-2">Daniel Rieger</h3>
+              <h3 className="text-md mb-2">Klemend Burkhard</h3>
               <hr className="w-full" />
               <p>Beisitzer</p>
             </div>
             <div className="flex flex-col items-center justify-baseline">
-              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450}/>
+              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
-              <h3 className="text-md mb-2">Christian Wolski</h3>
-              <hr className="w-full" />
-              <p>Kassenprüfer</p>
-            </div>
-            <div className="flex flex-col items-center justify-baseline">
-              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450}/>
-
-              <h3 className="text-md mb-2">Johny Gentner</h3>
+              <h3 className="text-md mb-2">Anne Merkt</h3>
               <hr className="w-full" />
               <p>Kassenprüfer</p>
             </div>
