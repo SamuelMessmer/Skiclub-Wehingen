@@ -2,7 +2,6 @@ import crypto from "crypto";
 import { FileUploadStrategy, UploadResult } from "./upload-strategy.util";
 import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 
-
 export class PdfUploadStrategy implements FileUploadStrategy {
     private static readonly ALLOWED_MIME_TYPES = ['application/pdf']
 
@@ -10,7 +9,7 @@ export class PdfUploadStrategy implements FileUploadStrategy {
         private s3Client: S3Client,
         private bucketName: string,
         private region: string
-    ) { }
+    ) {};
 
     validate(file: File): void {
         if (!PdfUploadStrategy.ALLOWED_MIME_TYPES.includes(file.type)) {
@@ -19,14 +18,14 @@ export class PdfUploadStrategy implements FileUploadStrategy {
     }
 
     generateFileName(file: File): string {
-        const randomString = crypto.randomBytes(8).toString('hex')
+        const randomString = crypto.randomBytes(8).toString("hex")
         return `${randomString}-${file.name}`
     }
 
     async upload(file: File): Promise<UploadResult> {
         try {
             const buffer = Buffer.from(await file.arrayBuffer())
-            const fileName = this.generateFileName(file)
+            const fileName = this.generateFileName(file);
 
             await this.s3Client.send(
                 new PutObjectCommand({
