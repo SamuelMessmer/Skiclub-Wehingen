@@ -14,7 +14,7 @@ const DeleteButton: React.FC<DeleteButtonProps> = ({ blogId }) => {
       const success = await deleteBlog(blogId);
 
       if (success) location.replace("/admin-Vorstand-1979");
-    } catch (error: any) {
+    } catch (error) {
       console.log(error)
       alert('Fehler beim Löschen des Blogs');
     }
