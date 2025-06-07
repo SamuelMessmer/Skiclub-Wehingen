@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { deleteBlog } from './delete';
 
@@ -7,16 +8,17 @@ interface DeleteButtonProps {
 
 const DeleteButton: React.FC<DeleteButtonProps> = ({ blogId }) => {
   const handleDelete = async () => {
-    if (confirm('Möchtest du die Rundmail wirklich löschen?')) {
-      try {
-        await deleteBlog(blogId); // Führe die Löschfunktion mit der Blog-ID aus
-      } catch (error) {
-        alert('Fehler beim Löschen des Blogs');
-        console.log(error)
-      }
+    if (!confirm('Möchtest Du die Rundmail wirklich löschen?')) return;
+
+    try {
+      const success = await deleteBlog(blogId);
+
+      if (success) location.replace("/admin-Vorstand-1979");
+    } catch (error: any) {
+      console.log(error)
+      alert('Fehler beim Löschen des Blogs');
     }
-    location.replace("/admin-Vorstand-1979")
-  };
+  }
 
   return <button onClick={handleDelete} className='w-full text-left'>Löschen</button>;
 };

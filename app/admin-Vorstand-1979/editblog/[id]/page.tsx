@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation"; // useParams for accessing dynamic params
 import NavBarAdmin from "../../components/NavbarAdmin";
 import { UploadResult } from "@/app/api/s3-upload/upload-strategy.util";
+import CustomTextEditor from "@/components/text-editor";
 
 const EditBlog = () => {
   const { id } = useParams(); // useParams to access the 'id' from the URL
@@ -83,7 +84,7 @@ const EditBlog = () => {
         const data = await response.json();
         setSuccess("Blog erfolgreich aktualisiert!");
         setBlog(data);
-        location.replace("/admin-Vorstand-1979");
+        setTimeout(() => { location.replace("/admin-Vorstand-1979") }, 450);
       }
     } catch (error) {
       setError("Ein unerwarteter Fehler ist aufgetreten.");
@@ -99,6 +100,11 @@ const EditBlog = () => {
         Blog wird geladen...
       </p>
     );
+
+  const onChange = (content: string) => {
+    setContent(content);
+    console.log(JSON.stringify(content));
+  }
 
   return (
     <div>
@@ -127,13 +133,7 @@ const EditBlog = () => {
             <label htmlFor="content" className="mb-2 font-bold">
               Content:
             </label>
-            <textarea
-              id="content"
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-              required
-              className="py-2 px-5 rounded-xl w-[600px] h-[500px] hover:border-slate-400 border-2 shadow-md"
-            />
+            <CustomTextEditor content={content} onChange={onChange} />
           </div>
 
           <div className="mt-5 p-5 flex flex-col">

@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Blog } from "@prisma/client";
 import { DropdownMenu } from "@radix-ui/react-dropdown-menu";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import NavbarAdmin from "./components/NavbarAdmin";
 import DeleteButton from "./components/DeleteBlog";
@@ -75,22 +74,22 @@ const AdminDashboard = () => {
                         onValueChange={setPosition}
                         className="mt-2"
                       >
-                        <Link href="/admin-Vorstand-1979">
+                        <div>
                           <DropdownMenuRadioItem
                             value="top"
-                            className="hover:bg-gray-00 hover:cursor-pointer py-1 px-2 rounded-lg"
+                            className="hover:cursor-pointer py-1 px-2 rounded-lg"
                           >
                             <DeleteButton blogId={blog.id} />
                           </DropdownMenuRadioItem>
-                        </Link>
-                        <Link href="/admin-Vorstand-1979/editblog">
+                        </div>
+                        <div>
                           <DropdownMenuRadioItem
                             value="top"
-                            className="hover:bg-gray-00 hover:cursor-pointer py-1 px-2 rounded-lg"
+                            className="hover:cursor-pointer py-1 px-2 rounded-lg"
                           >
                             <EditBlogButton blogId={blog.id} />
                           </DropdownMenuRadioItem>
-                        </Link>
+                        </div>
                       </DropdownMenuRadioGroup>
                     </DropdownMenuContent>
                   </DropdownMenu>

@@ -52,14 +52,15 @@ const Newsletter = () => {
                   alt="Logo Picture"
                   width={1920}
                   height={1080}
-                  className="hidden sm:block rounded-xl shadow-xl md:mt-5 md:mx-5 lg:my-5 lg:h-[520px] max-w-fit max-h-[620px] object-cover hover:scale-105 duration-150"
+                  className="hidden sm:block md:mt-5 md:mx-5 lg:my-5 lg:max-h-[520px] max-h-[620px] max-w-fit object-contain"
                 />
                 <div>
                   <CardHeader className="font-bold text-3xl lg:text-5xl -ml-2 mb-4 text-orange-500">
                     {blog.title}
                   </CardHeader>
-                  <CardContent className="mb-20 text-lg sm:mb-4">
-                    {blog.content}
+                  <CardContent className="prose mb-20 text-lg sm:mb-4">
+                    {/* Wird von React in HTML umgewandelt und in einem Div ausgegeben */}
+                    <div dangerouslySetInnerHTML={{ __html: blog.content }} />
                   </CardContent>
                 </div>
                 <p className="self-end py-2 px-4 opacity-50 ">{blog.createdAt}</p>

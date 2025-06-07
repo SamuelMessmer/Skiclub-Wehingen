@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SyncLoader } from 'react-spinners';
@@ -10,7 +10,6 @@ const LoadingScreen = () => {
       <div className="mb-12">
         <SyncLoader color="#f97316" loading={true} speedMultiplier={0.5} />
       </div>
-
 
       <p>Fehler beim Laden der Rundmail...</p>
       <Link href="/admin-Vorstand-1979">
