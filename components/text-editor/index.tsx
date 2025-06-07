@@ -6,12 +6,12 @@ import TextAlign from "@tiptap/extension-text-align";
 import Highlight from '@tiptap/extension-highlight';
 import MenuBar from './menu-bar';
 
-interface RichTextEditorProps {
+interface CustomTextEditorProps {
   content: string;
   onChange: (content: string) => void;
 }
 
-function CustomTextEditor({ content, onChange }: RichTextEditorProps) {
+function CustomTextEditor({ content, onChange }: CustomTextEditorProps) {
   const editor = useEditor({
     immediatelyRender: false,
     content: content,
