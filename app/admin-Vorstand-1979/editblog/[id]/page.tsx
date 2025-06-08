@@ -57,7 +57,6 @@ const EditBlog = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
     setError(null);
     setSuccess(null);
 
@@ -78,6 +77,8 @@ const EditBlog = () => {
         body: JSON.stringify(updatedBlog),
       });
 
+      setLoading(false);
+
       if (!response.ok) {
         const errorData = await response.json();
         setError("Fehler beim Aktualisieren: " + JSON.stringify(errorData));
@@ -85,13 +86,10 @@ const EditBlog = () => {
         const data = await response.json();
         setSuccess("Blog erfolgreich aktualisiert!");
         setBlog(data);
-        setTimeout(() => { location.replace("/admin-Vorstand-1979") }, 450);
       }
     } catch (error) {
       setError("Ein unerwarteter Fehler ist aufgetreten.");
       console.log(error);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -114,7 +112,7 @@ const EditBlog = () => {
   return (
     <div>
       <NavBarAdmin />
-      <form onSubmit={() => { setLoading(true); handleSubmit }}>
+      <form onSubmit={handleSubmit}>
         <div className="flex flex-col justify-center items-center my-12">
           <h1 className="font-bold text-3xl pt-5 px-5">
             Neue Rundmail erstellen
@@ -161,6 +159,7 @@ const EditBlog = () => {
           <button
             type="submit"
             disabled={loading}
+            onClick={() => setLoading(true)}
             className="bg-slate-200 hover:bg-gray-300 py-2 px-5 rounded-xl  hover:border-gray-300 border-2 my-4 mx-7 hover:scale-105 duration-100 font-semibold tracking-tight"
           >
             {loading ? "Speichern..." : "Änderungen speichern"}
