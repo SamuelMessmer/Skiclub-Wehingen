@@ -4,6 +4,7 @@ import { useParams } from "next/navigation"; // useParams for accessing dynamic 
 import NavBarAdmin from "../../components/NavbarAdmin";
 import { UploadResult } from "@/app/api/s3-upload/upload-strategy.util";
 import CustomTextEditor from "@/components/text-editor";
+import { SyncLoader } from "react-spinners";
 
 const EditBlog = () => {
   const { id } = useParams(); // useParams to access the 'id' from the URL
@@ -94,22 +95,26 @@ const EditBlog = () => {
     }
   };
 
-  if (!blog)
-    return (
-      <p className="flex flex-col justify-center items-center h-screen">
-        Blog wird geladen...
-      </p>
-    );
-
   const onChange = (content: string) => {
     setContent(content);
     console.log(JSON.stringify(content));
   }
 
+  if (!blog) {
+    return (
+      <div className="flex flex-col justify-center items-center h-screen">
+        <SyncLoader className="mb-12" color="#f97316" loading={true} speedMultiplier={0.5} />
+        <p>
+          Blog wird geladen...
+        </p>
+      </div>
+    )
+  }
+
   return (
     <div>
       <NavBarAdmin />
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={() => { setLoading(true); handleSubmit }}>
         <div className="flex flex-col justify-center items-center my-12">
           <h1 className="font-bold text-3xl pt-5 px-5">
             Neue Rundmail erstellen
