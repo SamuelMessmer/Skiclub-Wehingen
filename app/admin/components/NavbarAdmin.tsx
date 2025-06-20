@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <div className="fixed left-0 flex flex-col justify-center gap-2 h-screen shadow-md p-2 text-center -mt-24">
       <Link
-        href="/admin-Vorstand-1979/addblog"
+        href="/admin/addblog"
         className=" p-3 hover:scale-105 duration-150"
       >
         <div className="font-bold text-xl">
@@ -15,7 +15,7 @@ const NavBar = () => {
 
       <hr />
 
-      <Link href="/admin-Vorstand-1979" className=" p-3 hover:scale-105 duration-150">
+      <Link href="/admin" className=" p-3 hover:scale-105 duration-150">
         <div className="font-bold text-xl">
           Rundmail <br /> Übersicht
         </div>
@@ -23,9 +23,9 @@ const NavBar = () => {
 
       <hr />
 
-      <Link href="/admin-Vorstand-1979/editlinks" className=" p-3 hover:scale-105 duration-150">
+      <Link href="/admin/editlinks" className=" p-3 hover:scale-105 duration-150">
         <div className="font-bold text-xl">
-         Verwaltung <br /> Links 
+         Verwaltung <br /> Links
         </div>
       </Link>
 
