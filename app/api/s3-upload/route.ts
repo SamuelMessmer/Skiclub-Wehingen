@@ -1,6 +1,7 @@
 import { S3Client } from "@aws-sdk/client-s3"
 import { NextRequest, NextResponse } from "next/server"
 import { UploadResult, UploadStrategyFactory } from "./upload-strategy.util"
+import isAuthorized from "../auth/[...nextauth]/auth-helpers"
 
 const s3Client = new S3Client({
     region: process.env.AWS_REGION!,
@@ -11,6 +12,9 @@ const s3Client = new S3Client({
 })
 
 export async function POST(request: NextRequest) {
+    if (!(await isAuthorized()))
+        return NextResponse.json("not Authorized", { status: 401 });
+
     try {
         const formData = await request.formData()
         const file = formData.get('file') as File
@@ -38,7 +42,7 @@ export async function POST(request: NextRequest) {
 
 
 // Response handler
- class ApiResponse {
+class ApiResponse {
     static fromResult(result: UploadResult) {
         return result.success
             ? NextResponse.json(result, { status: 201 })

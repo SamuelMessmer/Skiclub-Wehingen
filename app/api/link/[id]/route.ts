@@ -1,5 +1,6 @@
 import prisma from "@/prisma/lib/client";
 import { NextRequest, NextResponse } from "next/server";
+import isAuthorized from "../../auth/[...nextauth]/auth-helpers";
 
 export async function GET() {
     const link = await prisma.linkData.findUnique({
@@ -14,15 +15,18 @@ export async function GET() {
 }
 
 export async function PATCH(request: NextRequest, { params }: { params: { id: string } }) {
-    const body = await request.json();
+    if (!(await isAuthorized()))
+        return NextResponse.json("not Authorized", { status: 401 })
 
+    const body = await request.json();
     const test = await prisma.linkData.findUnique({
         where: {
             id: parseInt(params.id),
         }
     })
 
-    if (test == null) return NextResponse.json({ error: "Link wurde nicht gefunden" }, { status: 404 });
+    if (test == null)
+        return NextResponse.json({ error: "Link wurde nicht gefunden" }, { status: 404 });
 
     try {
         await prisma.linkData.update({
