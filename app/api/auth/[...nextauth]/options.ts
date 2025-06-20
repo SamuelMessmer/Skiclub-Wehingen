@@ -40,7 +40,7 @@ export const options: NextAuthOptions = {
         signIn: "/auth/login", // <<< verwende NextAuth Standard
     },
     callbacks: {
-        async redirect({ url, baseUrl }) {
+        async redirect({ baseUrl }) {
             return baseUrl + "/admin"; // <<< IMMER redirect nach Login
         },
     },
