@@ -25,7 +25,10 @@ export const options: NextAuthOptions = {
             async authorize(credentials) {
                 const user = { id: "42", name: "Dave", password: "nextauth" }
 
-                if (credentials?.username === user.name && credentials?.password === user.password) {
+                if (
+                    credentials?.username === user.name &&
+                    credentials?.password === user.password
+                ) {
                     return user;
                 } else {
                     return null;
@@ -33,4 +36,12 @@ export const options: NextAuthOptions = {
             }
         })
     ],
+    pages: {
+        signIn: "/auth/login", // <<< verwende NextAuth Standard
+    },
+    callbacks: {
+        async redirect({ url, baseUrl }) {
+            return baseUrl + "/admin"; // <<< IMMER redirect nach Login
+        },
+    },
 }
