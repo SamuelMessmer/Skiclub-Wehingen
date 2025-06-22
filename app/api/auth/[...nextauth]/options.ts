@@ -23,7 +23,11 @@ export const options: NextAuthOptions = {
                 }
             },
             async authorize(credentials) {
-                const user = { id: "42", name: "Dave", password: "nextauth" }
+                const user = {
+                    id: "42",
+                    name: process.env.NEXTAUTH_USERNAME as string,
+                    password: process.env.NEXTAUTH_PASSWORD as string
+                }
 
                 if (
                     credentials?.username === user.name &&
@@ -37,7 +41,7 @@ export const options: NextAuthOptions = {
         })
     ],
     pages: {
-        signIn: "/auth/login", // <<< verwende NextAuth Standard
+        signIn: "/auth/login",
     },
     callbacks: {
         async redirect({ baseUrl }) {
