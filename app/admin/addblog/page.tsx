@@ -38,13 +38,13 @@ const CreateBlog = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
-        setError(null);
-        setSuccess(null);
-        e.preventDefault();
 
         try {
             const awsUrl = await handleImageUpload(); //handleImageUpload returns awsUrl als string
-            if (awsUrl === undefined) return
+            if (awsUrl === undefined) {
+                setError("Das Bild konnte leider nicht erfolgreich erstellt werden :(")
+                return;
+            }
 
             const blogData = {
                 title,
@@ -70,7 +70,7 @@ const CreateBlog = () => {
             setContent("");
             setLoading(false);
             setFile(null); // Setze img zurück auf null
-            setTimeout(() => {location.replace("/admin-Vorstand-1979")}, 450);
+            setTimeout(() => {location.replace("/admin")}, 201);
         } catch (error) {
             setLoading(false)
             setTitle("")
