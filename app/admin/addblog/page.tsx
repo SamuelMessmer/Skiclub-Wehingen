@@ -70,7 +70,7 @@ const CreateBlog = () => {
             setContent("");
             setLoading(false);
             setFile(null); // Setze img zurück auf null
-            setTimeout(() => {location.replace("/admin")}, 201);
+            setTimeout(() => {location.replace("/admin")}, 450);
         } catch (error) {
             setLoading(false)
             setTitle("")

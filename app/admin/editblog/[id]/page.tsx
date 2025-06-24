@@ -37,61 +37,128 @@ const EditBlog = () => {
   }, [id]);
 
   const handleImageUpload = async () => {
-    const formData = new FormData();
-    formData.append("file", file!);
+        const formData = new FormData();
+        formData.append("file", file!);
 
-    try {
-      const response = await fetch("/api/s3-upload", {
-        method: "POST",
-        body: formData,
-      });
+        try {
+            const response = await fetch("/api/s3-upload", {
+                method: "POST",
+                body: formData,
+            });
 
-      const result: UploadResult = await response.json();
-      return result.fileUrl
+            if (!response.ok) throw new Error("Upload fehlgeschlage")
 
-    } catch (error) {
-      setError("Fehler beim Hochladen des Bildes.");
-      console.log("Fehler beim hochladen auf AWS" + error);
-    }
-  };
+            const result: UploadResult = await response.json();
+            return result.fileUrl;
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError(null);
-    setSuccess(null);
-
-    const awsUrl = await handleImageUpload();
-
-    const updatedBlog = {
-      title,
-      content,
-      img: awsUrl,
+        } catch (error) {
+            console.log(error)
+            setError("Fehler beim Hochladen des Bildes.");
+        }
     };
 
-    try {
-      const response = await fetch(`/api/blog/${id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updatedBlog),
-      });
+  // const handleImageUpload = async () => {
+  //   const formData = new FormData();
+  //   formData.append("file", file!);
 
-      setLoading(false);
+  //   try {
+  //     const response = await fetch("/api/s3-upload", {
+  //       method: "POST",
+  //       body: formData,
+  //     });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        setError("Fehler beim Aktualisieren: " + JSON.stringify(errorData));
-      } else {
-        const data = await response.json();
-        setSuccess("Blog erfolgreich aktualisiert!");
-        setBlog(data);
-      }
-    } catch (error) {
-      setError("Ein unerwarteter Fehler ist aufgetreten.");
-      console.log(error);
-    }
-  };
+  //     const result: UploadResult = await response.json();
+  //     return result.fileUrl
+
+  //   } catch (error) {
+  //     setError("Fehler beim Hochladen des Bildes.");
+  //     console.log("Fehler beim hochladen auf AWS" + error);
+  //   }
+  // };
+
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setError(null);
+  //   setSuccess(null);
+
+  //   const awsUrl = await handleImageUpload();
+
+  //   const updatedBlog = {
+  //     title,
+  //     content,
+  //     img: awsUrl,
+  //   };
+
+  //   try {
+  //     const response = await fetch(`/api/blog/${id}`, {
+  //       method: "PATCH",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(updatedBlog),
+  //     });
+
+  //     setLoading(false);
+
+  //     if (!response.ok) {
+  //       const errorData = await response.json();
+  //       setError("Fehler beim Aktualisieren: " + JSON.stringify(errorData));
+  //     } else {
+  //       const data = await response.json();
+  //       setSuccess("Blog erfolgreich aktualisiert!");
+  //       setBlog(data);
+  //     }
+  //   } catch (error) {
+  //     setError("Ein unerwarteter Fehler ist aufgetreten.");
+  //     console.log(error);
+  //   }
+  // };
+
+      const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+
+        try {
+            const awsUrl = await handleImageUpload(); //handleImageUpload returns awsUrl als string
+            if (awsUrl === undefined) {
+                setError("Das Bild konnte leider nicht erfolgreich erstellt werden :(")
+                return;
+            }
+
+            const blogData = {
+                title,
+                content,
+                img: awsUrl, // Die S3-Bild-URL verwenden
+            };
+
+            const response = await fetch("/api/blog", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(blogData),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || "Unbekannter Fehler");
+            }
+
+            setSuccess("Blog erfolgreich erstellt!");
+            setTitle("");
+            setContent("");
+            setLoading(false);
+            setFile(null); // Setze img zurück auf null
+            setTimeout(() => {location.replace("/admin")}, 450);
+        } catch (error) {
+            setLoading(false)
+            setTitle("")
+            setContent("")
+            setFile(null)
+            setError("Fehler beim Speichern")
+            console.log("Hier ist der Fehler: " + error)
+        }
+    };
 
   const onChange = (content: string) => {
     setContent(content);
