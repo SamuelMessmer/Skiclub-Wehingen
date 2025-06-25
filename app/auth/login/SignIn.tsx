@@ -5,6 +5,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 type FormValues = {
     username: string;
@@ -26,6 +28,7 @@ export default function SignIn() {
 
     const [error, setError] = useState("");
     const [success, setSuccess] = useState(false);
+    const [passwordVisibility, setPasswordVisibility] = useState(false);
 
     const onSubmit = async (data: FormValues) => {
         const res = await signIn("credentials", {
@@ -95,18 +98,31 @@ export default function SignIn() {
                                         <label className="block font-semibold text-lg mb-2">
                                             Passwort:
                                         </label>
-                                        <input
-                                            {...register("password", {
-                                                required: "Bitte geben Sie ein Passwort an",
-                                                minLength: {
-                                                    value: 8,
-                                                    message: "Das Passwort muss mindestens 6 Zeichen lang sein"
-                                                }
-                                            })}
-                                            type="password"
-                                            placeholder="Ihr Passwort"
-                                            className={`p-2 border border-orange-200 rounded-xl w-full ${errors.password && "border-2 border-red-500"}`}
-                                        />
+
+                                        <div className="relative">
+                                            <input
+                                                {...register("password", {
+                                                    required: "Bitte geben Sie ein Passwort an",
+                                                    minLength: {
+                                                        value: 8,
+                                                        message: "Das Passwort muss mindestens 6 Zeichen lang sein"
+                                                    }
+                                                })}
+                                                type={`${passwordVisibility ? "password" : "text"}`}
+                                                placeholder="Ihr Passwort"
+                                                className={`p-2 border border-orange-200 rounded-xl w-full ${errors.password && "border-2 border-red-500"}`}
+                                            />
+                                            <button
+                                                type="button"
+                                                className="absolute top-3 right-5"
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    setPasswordVisibility(!passwordVisibility);
+                                                }}
+                                            >
+                                                {passwordVisibility ? <FaEyeSlash /> : <FaEye />}
+                                            </button>
+                                        </div>
                                         {errors.password && (
                                             <p className="font-light text-xs text-red-500">{`${errors.password?.message}`}</p>
                                         )}

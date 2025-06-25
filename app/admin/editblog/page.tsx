@@ -12,7 +12,7 @@ const LoadingScreen = () => {
       </div>
 
       <p>Fehler beim Laden der Rundmail...</p>
-      <Link href="/admin-Vorstand-1979">
+      <Link href="/admin">
         <Button className="bg-orange-500 hover:bg-orange-600 hover:scale-105 transition duration-200 shadow-md font-bold text-white border-2 border-orange-500 mt-12">
           Erneut versuchen
         </Button>
