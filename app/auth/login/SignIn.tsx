@@ -12,6 +12,8 @@ type FormValues = {
 }
 
 export default function SignIn() {
+    const SUCCESS_MESSAGE = "Login erfolgreich!"
+
     const router = useRouter();
     const searchParams = useSearchParams();
     const callbackUrl = searchParams.get("callbackUrl") || "/admin";
@@ -23,6 +25,7 @@ export default function SignIn() {
     } = useForm<FormValues>();
 
     const [error, setError] = useState("");
+    const [success, setSuccess] = useState(false);
 
     const onSubmit = async (data: FormValues) => {
         const res = await signIn("credentials", {
@@ -35,6 +38,7 @@ export default function SignIn() {
         if (res?.error) {
             setError("Login fehlgeschlagen - Bitte überprüfen Sie Ihre Anmeldedaten");
         } else if (res?.url) {
+            setSuccess(true);
             router.push(res.url);
         }
     };
@@ -108,9 +112,12 @@ export default function SignIn() {
                                         )}
                                     </div>
 
-                                    {(error !== null && !isSubmitting) && (
+                                    {(error !== null && !isSubmitting && !success) && (
                                         <p className="text-red-500 mb-4">{error}</p>
                                     )}
+                                    {(success && (
+                                        <p className="text-green-500 mb-4">{SUCCESS_MESSAGE}</p>
+                                    ))}
 
                                     <button
                                         type="submit"
