@@ -28,7 +28,7 @@ export default function SignIn() {
 
     const [error, setError] = useState("");
     const [success, setSuccess] = useState(false);
-    const [passwordVisibility, setPasswordVisibility] = useState(false);
+    const [isPasswordVisible, setPasswordVisibility] = useState(false);
 
     const onSubmit = async (data: FormValues) => {
         const res = await signIn("credentials", {
@@ -108,7 +108,7 @@ export default function SignIn() {
                                                         message: "Das Passwort muss mindestens 6 Zeichen lang sein"
                                                     }
                                                 })}
-                                                type={`${passwordVisibility ? "password" : "text"}`}
+                                                type={`${isPasswordVisible ? "text" : "password"}`}
                                                 placeholder="Ihr Passwort"
                                                 className={`p-2 border border-orange-200 rounded-xl w-full ${errors.password && "border-2 border-red-500"}`}
                                             />
@@ -117,10 +117,10 @@ export default function SignIn() {
                                                 className="absolute top-3 right-5"
                                                 onClick={(e) => {
                                                     e.preventDefault();
-                                                    setPasswordVisibility(!passwordVisibility);
+                                                    setPasswordVisibility(!isPasswordVisible);
                                                 }}
                                             >
-                                                {passwordVisibility ? <FaEyeSlash /> : <FaEye />}
+                                                {isPasswordVisible ? <FaEye /> : <FaEyeSlash />}
                                             </button>
                                         </div>
                                         {errors.password && (
