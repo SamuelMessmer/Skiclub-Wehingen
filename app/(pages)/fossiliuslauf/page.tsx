@@ -10,8 +10,8 @@ const Fossiliuslauf = () => {
     <div className="relative">
       <HoverButton />
       <section>
-        <div className="flex flex-col items-center mt-24 mb-4 sm:mb-32">
-          <p className="text-orange-500 text-lg sm:text-2xl self-start ml-4 -mb-4 md:mb-1 md:self-auto">
+        <div className="flex flex-col gap-2 items-center mt-24 mb-4 sm:mb-32">
+          <p className="text-orange-500 text-lg sm:text-2xl self-start ml-4 lg:-mb-4 md:mb-1 sm:self-center">
             Hier finden Sie alle Infos zum
           </p>
           <h1 className="font-extrabold text-[52px] sm:text-8xl sm1 xl:text-9xl tracking-tighter mb-5 sm:mb-4 z-10">
