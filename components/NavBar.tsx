@@ -94,7 +94,8 @@ const NavBar = () => {
                     Verein
                   </Link>
 
-                  <Link href={link}
+                  <Link
+                    href={link}
                     target={"_blank"}
                     rel="noopener noreferrer"
                   >

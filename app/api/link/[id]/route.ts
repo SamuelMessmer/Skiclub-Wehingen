@@ -2,14 +2,23 @@ import prisma from "@/prisma/lib/client";
 import { NextRequest, NextResponse } from "next/server";
 import isAuthorized from "../../auth/[...nextauth]/auth-helpers";
 
-export async function GET() {
+export async function GET(
+    request: Request,
+    { params }: { params: { id: string } }
+) {
+    const linkId = parseInt(params.id, 10);
+
+    if (isNaN(linkId)) {
+        return NextResponse.json({ error: "Invalid id" }, { status: 400 });
+    }
+
     const link = await prisma.linkData.findUnique({
         where: {
-            id: 1,
+            id: linkId,
         },
     });
 
-    if (link == null)
+    if (!link)
         return NextResponse.json({ error: "link not found" }, { status: 404 });
     return NextResponse.json(link, { status: 200 });
 }

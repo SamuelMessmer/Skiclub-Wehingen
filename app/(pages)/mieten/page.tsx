@@ -61,7 +61,7 @@ const FormularKontakt = () => {
                             <div className="">
                                 <CardHeader className="-ml-2 mb-4 mt-12">
                                     <p className="font-bold text-3xl lg:text-5xl">Hier ihre Informationen angeben:</p>
-                                    <p className="text-gray-600">Weitere Informationen bezüglich der Skihütte, sowie die Mietpreise, finden Sie auf der Startseite unter der Kategorie: "Skihütte des SC-Wehingen".</p>
+                                    <p className="text-gray-600">Weitere Informationen bezüglich der Skihütte, sowie die Mietpreise, finden Sie auf der Startseite unter der Kategorie: Skihütte des SC-Wehingen.</p>
                                 </CardHeader>
                                 <CardContent className="text-lg sm:mb-4">
                                     <form
