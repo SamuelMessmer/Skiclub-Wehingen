@@ -59,8 +59,9 @@ const FormularKontakt = () => {
                     <div className="flex flex-col sticky top-24 md:mx-40">
                         <Card className="mb-5 md:mb-24 mx-4 md:mx-14 flex flex-col items-center md:items-center animate-zoom zoom shadow-xl bg-[#EFF7FF]">
                             <div className="">
-                                <CardHeader className=" font-bold text-3xl lg:text-5xl -ml-2 mb-4 mt-12">
-                                    Hier ihre Informationen angeben:
+                                <CardHeader className="-ml-2 mb-4 mt-12">
+                                    <p className="font-bold text-3xl lg:text-5xl">Hier ihre Informationen angeben:</p>
+                                    <p className="text-gray-600">Weitere Informationen bezüglich der Skihütte, sowie die Mietpreise, finden Sie auf der Startseite unter der Kategorie: "Skihütte des SC-Wehingen".</p>
                                 </CardHeader>
                                 <CardContent className="text-lg sm:mb-4">
                                     <form
