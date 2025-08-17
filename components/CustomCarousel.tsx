@@ -6,8 +6,6 @@ import Image from "next/image";
 export default function Carousel() {
   const images = [
     "/Skihuette2.jpg",
-    "/Skihuette2.jpg",
-    "/spielplatz.png",
     "/bettenNeu.jpg",
     "/bettenNeu2.jpg",
     "/neueFotos1.png",
