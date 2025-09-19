@@ -10,8 +10,8 @@ const Fossiliuslauf = () => {
     <div className="relative">
       <HoverButton />
       <section>
-        <div className="flex flex-col gap-2 items-center mt-24 mb-4 sm:mb-32">
-          <p className="text-orange-500 text-lg sm:text-2xl self-start ml-4 lg:-mb-4 md:mb-1 sm:self-center">
+        <div className="flex flex-col items-center mt-24 mb-4 sm:mb-32">
+          <p className="text-orange-500 text-lg sm:text-2xl self-start ml-4 -mb-4 md:mb-1 md:self-auto">
             Hier finden Sie alle Infos zum
           </p>
           <h1 className="font-extrabold text-[52px] sm:text-8xl sm1 xl:text-9xl tracking-tighter mb-5 sm:mb-4 z-10">
@@ -48,10 +48,16 @@ const Fossiliuslauf = () => {
                 <CardContent className="font-bold text-lg text-orange-500">
                   Weiter Infos:
                 </CardContent>
-                <CardContent className="lg:-mt-4 mb-20 text-lg sm:mb-4">
+                {/* <CardContent className="lg:-mt-4 mb-20 text-lg sm:mb-4">
                   Alle drei Läufe beginnen um 11:00 Uhr. Für den Jedermannlauf
                   und das Nordic Walking beträgt das Startgeld 6,00 €, während
                   für den Hauptlauf ein Startgeld von 8,00 € anfällt.
+                </CardContent> */}
+                <CardContent  className="lg:-mt-4 mb-20 text-lg sm:mb-4">
+                  Der Hauptlauf (11,2 Kilometer) beginnt um 11:00Uhr, Jedermann (6,0 Kilometer)
+                  und Nordic-Walking (8,0 Kilometer) starten hingegen um 11:10Uhr. Das Startgeld
+                  für den Hauptlauf beträgt 8,00€, das Startgeld für die beiden anderen Läufe
+                  liegt bei 6,00€.
                 </CardContent>
               </div>
             </Card>
@@ -81,7 +87,7 @@ const Fossiliuslauf = () => {
                   <b>- Schülerlauf</b>
                 </CardContent>
                 <CardContent className="mb-14 sm:mb-0">
-                  Der Schülerlauf startet um 09:30 Uhr und führt über eine
+                  Der Schülerlauf startet um 10:00 Uhr und führt über eine
                   Strecke von 1,5 km. Um teilnehmen zu können, müssen die
                   Schüler zwischen 10 und 17 Jahren alt sein. Es fällt ein
                   Startgeld von 4,00 € an.
@@ -129,10 +135,10 @@ const Fossiliuslauf = () => {
                   Weiter Infos:
                 </CardContent>
                 <CardContent className="mb-14 sm:mb-0 text-white">
-                  Der Bambinilauf beginnt um 09:50 Uhr und führt über eine
+                  Der Bambinilauf beginnt um 09:530 Uhr und führt über eine
                   Strecke von 300 Metern. Die Teilnahme ist kostenlos und steht
                   allen Kindern der Jahrgänge 2020 bis 2022 offen. Im Anschluss
-                  startet um 10:00 Uhr der Kidslauf, der eine Distanz von 500
+                  startet um 09:50 Uhr der Kidslauf, der eine Distanz von 500
                   Metern umfasst. Auch hier ist die Teilnahme kostenlos, und es
                   dürfen Kinder aus den Jahrgängen 2017 bis 2019 mitmachen.
                 </CardContent>
