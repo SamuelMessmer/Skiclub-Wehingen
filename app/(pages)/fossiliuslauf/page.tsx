@@ -135,7 +135,7 @@ const Fossiliuslauf = () => {
                   Weiter Infos:
                 </CardContent>
                 <CardContent className="mb-14 sm:mb-0 text-white">
-                  Der Bambinilauf beginnt um 09:530 Uhr und führt über eine
+                  Der Bambinilauf beginnt um 09:30 Uhr und führt über eine
                   Strecke von 300 Metern. Die Teilnahme ist kostenlos und steht
                   allen Kindern der Jahrgänge 2020 bis 2022 offen. Im Anschluss
                   startet um 09:50 Uhr der Kidslauf, der eine Distanz von 500
