@@ -76,10 +76,8 @@ const ManageLinks = () => {
 
         const linkUpdateBody = {
             id,
-            document: awsUrl, // Verwende fileUrl direkt
+            document: awsUrl,
         };
-
-        console.log(id, awsUrl, "===========")
 
         try {
             const response = await fetch(`/api/link/${id}`, {
@@ -102,7 +100,8 @@ const ManageLinks = () => {
             console.log(error);
         } finally {
             setLoading(false);
-            setTimeout(() => { location.replace("/admin/editlinks") }, 450);
+            console.log("hat funktioniert")
+            setTimeout(() => { location.replace("/admin/editlinks") }, 500);
         }
     }
 
