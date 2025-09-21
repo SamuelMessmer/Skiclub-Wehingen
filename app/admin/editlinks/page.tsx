@@ -79,6 +79,8 @@ const ManageLinks = () => {
             document: awsUrl, // Verwende fileUrl direkt
         };
 
+        console.log(id, awsUrl, "===========")
+
         try {
             const response = await fetch(`/api/link/${id}`, {
                 method: "PATCH",
@@ -100,6 +102,7 @@ const ManageLinks = () => {
             console.log(error);
         } finally {
             setLoading(false);
+            setTimeout(() => { location.replace("/admin/editlinks") }, 450);
             location.reload();
         }
     }
@@ -143,7 +146,7 @@ const ManageLinks = () => {
                                                 >
                                                     <input
                                                         type="file"
-                                                        onFocus={() => setId(link.id)}
+                                                        // onFocus={() => setId(link.id)}
                                                         onChange={(e) => {
                                                             if (e.target.files && e.target.files.length > 0) {
                                                                 setFile(e.target.files[0]);
@@ -154,7 +157,7 @@ const ManageLinks = () => {
                                                     />
 
                                                     <Button
-                                                        onClick={() => setId(link.id)}
+                                                        onClick={() => { setId(link.id); console.log("------LINK-ID: " + link.id) }}
                                                         type="submit"
                                                         disabled={loading}
                                                         className="bg-orange-500 items-cent hover:bg-orange-600 hover:scale-105 transition duration-200 shadow-md w-full"
