@@ -1,6 +1,5 @@
 import prisma from "@/prisma/lib/client";
 import { NextRequest, NextResponse } from "next/server";
-import isAuthorized from "../../auth/[...nextauth]/auth-helpers";
 
 export async function GET(
     request: Request,
