@@ -24,9 +24,6 @@ export async function GET(
 }
 
 export async function PATCH(request: NextRequest, { params }: { params: { id: string } }) {
-    if (!(await isAuthorized()))
-        return NextResponse.json("not Authorized", { status: 401 })
-
     const body = await request.json();
     const test = await prisma.linkData.findUnique({
         where: {
