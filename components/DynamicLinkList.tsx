@@ -14,8 +14,13 @@ export default function LaufListe() {
     useEffect(() => {
         const fetchLinks = async () => {
             try {
-                const response = await fetch("/api/link");
+                // const response = await fetch("/api/link");
+                // const data = await response.json();
+
+                const response = await fetch("/api/link", { cache: "no-store" });
                 const data = await response.json();
+                console.log("API Response:", JSON.stringify(data));
+                setLinks(data);
 
                 console.log("API REsponse: " + data)
                 setLinks(data);
