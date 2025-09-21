@@ -103,7 +103,6 @@ const ManageLinks = () => {
         } finally {
             setLoading(false);
             setTimeout(() => { location.replace("/admin/editlinks") }, 450);
-            location.reload();
         }
     }
 
