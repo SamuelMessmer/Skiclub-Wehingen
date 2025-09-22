@@ -77,14 +77,14 @@ const BlockCards = () => {
           <div className="sm:text-center md:text-left">
             <CardHeader className="font-bold text-3xl lg:text-5xl ml-2 md:ml-0 text-white xl:pr-28">
               Fossiliuslauf
-              <p className="font-normal text-xl ml-0 text-white block xl:hidden">
+              <p className="font-normal text-xl ml-0 text-white block">
                 &quot;Laufen, wo die Alb am höchsten ist&quot;{" "}
               </p>
             </CardHeader>
             <CardContent className="mb-14 -ml-8 sm:mb-0 w-[10px] hidden xl:block">
             </CardContent>
             <CardContent className="font-bold text-lg text-white"></CardContent>
-            <CardContent className="mb-20 text-lg sm:mb-4 block xl:hidden ">
+            <CardContent className="mb-20 text-lg sm:mb-4 block">
               Im Jahr 1985 veranstaltete der Skiclub am 6. Oktober den
               ersten Fossiliuslauf, da der Schnee in diesem Winter ausblieb.
               Über 150 Sportler nahmen an diesem großen Familiensportfest
