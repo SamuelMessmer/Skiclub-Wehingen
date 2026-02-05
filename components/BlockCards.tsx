@@ -48,10 +48,10 @@ const BlockCards = () => {
               Öffnungszeiten:
             </CardContent>
             <CardContent className="mb-20 text-lg sm:mb-4">
-              Montag bis Samstag: 13:30 -19:00 Uhr
+              Mittwoch, Samstag und Sonntag von 13:30 - 16:30 Uhr
               <br />
               <span className="text-md opacity-50">
-                Für alle Wintermonate in denen Schnee liegt{" "}
+                Bei aussreichender Schneelage{" "}
               </span>
             </CardContent>
           </div>
