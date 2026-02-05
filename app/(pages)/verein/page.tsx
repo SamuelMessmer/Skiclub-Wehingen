@@ -46,41 +46,23 @@ const Verein = () => {
             <div className="flex flex-col items-center justify-baseline">
               <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
-              <h3 className="text-md mb-2">Daniel Rieger</h3>
+              <h3 className="text-md mb-2" href="mailto:dan<!-- kommentar@falle -->iel@sc-<!-- kommentar@falle -->wehingen.de">Daniel Rieger</h3>
               <hr className="w-full" />
               <p>Schriftführer</p>
-              <a
-                className="text-black font-bold"
-                href="mailto:siegfried@sc-wehingen.de"
-              >
-                siegfried@sc-wehingen.de
-              </a>
             </div>
             <div className="flex flex-col items-center justify-baseline">
               <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
               <h3 className="text-md mb-2">Rüdiger Tack</h3>
               <hr className="w-full" />
-              <p>Skihütte</p>
-              <a
-                className="text-black font-bold"
-                href="mailto:skihuette@sc-wehingen.de"
-              >
-                skihuette@sc-wehingen.de
-              </a>
+              <p>Hüttenwart</p>
             </div>
             <div className="flex flex-col items-center justify-baseline">
               <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
-              <h3 className="text-md mb-2">Johannes Klaiber</h3>
+              <h3 className="text-md mb-2" href="mailto:johan<!-- kommentar@falle -->nes@sc-weh<!-- kommentar@falle -->ingen.de">Johannes Klaiber</h3>
               <hr className="w-full" />
               <p>Beisitzer</p>
-              <a
-                className="text-black font-bold"
-                href="mailto:johannes@sc-wehingen.de"
-              >
-                johannes@sc-wehingen.de
-              </a>
             </div>
             <div className="flex flex-col items-center justify-baseline">
               <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
@@ -88,12 +70,6 @@ const Verein = () => {
               <h3 className="text-md mb-2">Fabian Rees</h3>
               <hr className="w-full" />
               <p>Beisitzer</p>
-              <a
-                className="text-black font-bold"
-                href="mailto:fabian@sc-wehingen.de"
-              >
-                fabian@sc-wehingen.de
-              </a>
             </div>
             <div className="flex flex-col items-center justify-baseline">
               <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
@@ -114,7 +90,7 @@ const Verein = () => {
 
               <h3 className="text-md mb-2">Anne Merkt</h3>
               <hr className="w-full" />
-              <p>Kassenprüfer</p>
+              <p>Beisitzer</p>
             </div>
           </div>
         </div>
