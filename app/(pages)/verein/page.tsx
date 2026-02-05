@@ -19,21 +19,21 @@ const Verein = () => {
             <div className="flex flex-col items-center justify-baseline">
               <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
-              <h3 className="text-md mb-2"><a href="&#103;&#101;&#114;&#100;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;">Gerd Linse</a></h3>
+              <h3 className="text-md mb-2"><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#103;&#101;&#114;&#100;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;">Gerd Linse</a></h3>
               <hr className="w-full" />
               <p>1. Vorstand</p>
             </div>
             <div className="flex flex-col items-center justify-baseline">
               <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
-              <h3 className="text-md mb-2"><a href="&#107;&#97;&#116;&#104;&#97;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;">Katha Heyer</a></h3>
+              <h3 className="text-md mb-2"><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#107;&#97;&#116;&#104;&#97;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;">Katha Heyer</a></h3>
               <hr className="w-full" />
               <p>2. Vorstand</p>
             </div>
             <div className="flex flex-col items-center justify-baseline">
               <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
-              <h3 className="text-md mb-2"><a href="&#114;&#101;&#105;&#109;&#97;&#114;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;">Reimar Oelte</a></h3>
+              <h3 className="text-md mb-2"><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#101;&#105;&#109;&#97;&#114;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;">Reimar Oelte</a></h3>
               <hr className="w-full" />
               <p>Kassierer</p>
             </div>
@@ -47,7 +47,7 @@ const Verein = () => {
             <div className="flex flex-col items-center justify-baseline">
               <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
-              <h3 className="text-md mb-2"><a href="&#114;&#117;&#101;&#100;&#105;&#103;&#101;&#114;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101">Rüdiger Tack</a></h3>
+              <h3 className="text-md mb-2"><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#117;&#101;&#100;&#105;&#103;&#101;&#114;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101">Rüdiger Tack</a></h3>
               <hr className="w-full" />
               <p>Hüttenwart</p>
             </div>
@@ -61,28 +61,28 @@ const Verein = () => {
             <div className="flex flex-col items-center justify-baseline">
               <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
-              <h3 className="text-md mb-2"><a href="&#102;&#97;&#98;&#105;&#97;&#110;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;">Fabian Rees</a></h3>
+              <h3 className="text-md mb-2"><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#102;&#97;&#98;&#105;&#97;&#110;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;">Fabian Rees</a></h3>
               <hr className="w-full" />
               <p>Beisitzer</p>
             </div>
             <div className="flex flex-col items-center justify-baseline">
               <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
-              <h3 className="text-md mb-2"><a href="&#109;&#101;&#108;&#97;&#110;&#105;&#101;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;">Melanie Messmer</a></h3>
+              <h3 className="text-md mb-2"><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#109;&#101;&#108;&#97;&#110;&#105;&#101;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;">Melanie Messmer</a></h3>
               <hr className="w-full" />
               <p>Beisitzer</p>
             </div>
             <div className="flex flex-col items-center justify-baseline">
               <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
-              <h3 className="text-md mb-2"><a href="&#107;&#108;&#101;&#109;&#101;&#110;&#115;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;">Klemend Burkhard</a></h3>
+              <h3 className="text-md mb-2"><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#107;&#108;&#101;&#109;&#101;&#110;&#115;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;">Klemend Burkhard</a></h3>
               <hr className="w-full" />
               <p>Beisitzer</p>
             </div>
             <div className="flex flex-col items-center justify-baseline">
               <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
-              <h3 className="text-md mb-2"><a href="&#97;&#110;&#110;&#101;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;">Anne Merkt</a></h3>
+              <h3 className="text-md mb-2"><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#97;&#110;&#110;&#101;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;">Anne Merkt</a></h3>
               <hr className="w-full" />
               <p>Beisitzer</p>
             </div>
