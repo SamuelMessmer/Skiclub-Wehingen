@@ -40,8 +40,7 @@ const Verein = () => {
             <div className="flex flex-col items-center justify-baseline">
               <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
-              <h3 className="text-md mb-2"><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#100;&#97;&#110;&#105;&#101;&#108;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;
-">Daniel Rieger</a></></h3>
+              <h3 className="text-md mb-2"><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#100;&#97;&#110;&#105;&#101;&#108;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;">Daniel Rieger</a></h3>
               <hr className="w-full" />
               <p>Schriftführer</p>
             </div>
@@ -55,8 +54,7 @@ const Verein = () => {
             <div className="flex flex-col items-center justify-baseline">
               <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
-              <h3 className="text-md mb-2"><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#111;&#104;&#97;&#110;&#110;&#101;&#115;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;
-">Johannes Klaiber</a></h3>
+              <h3 className="text-md mb-2"><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#111;&#104;&#97;&#110;&#110;&#101;&#115;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;">Johannes Klaiber</a></h3>
               <hr className="w-full" />
               <p>Beisitzer</p>
             </div>
