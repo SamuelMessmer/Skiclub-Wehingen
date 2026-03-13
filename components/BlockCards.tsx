@@ -58,7 +58,7 @@ const BlockCards = () => {
               Informationen:
             </CardContent>
             <CardContent className="mb-20 text-lg sm:mb-4">
-              Aktuelles zum Betrieb gibt es über den folgenden
+              Aktuelles zum Betrieb gibt es über den folgenden 
               <a href="https://www.whatsapp.com/channel/0029VbC0VefDOQIUZc5qIa2D" className="text-[#2c2c2c] no-underline border-b border-gray-400">WhatsApp Kanal</a>
             </CardContent>
           </div>
