@@ -32,7 +32,7 @@ export default function Home() {
             <p className=" md:text-center text-xl mb-8">
               Traditionsverein mit über 44 Jahren Erfahrung und{" "}
               <br className="hidden sm:block" />
-              einem großen Angebot an Aktivitäten für mehr als 150 Mitglieder.
+              einem großen Angebot an Aktivitäten für mehr als 225 Mitglieder.
             </p>
           </div>
           <div className="flex gap-8 z-0">
