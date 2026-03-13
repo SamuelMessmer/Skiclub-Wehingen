@@ -53,6 +53,8 @@ const BlockCards = () => {
               <span className="text-md opacity-50">
                 Bei aussreichender Schneelage{" "}
               </span>
+              <br />
+              Aktuelle Informationen zum Betrieb gibt es über den folgenden <a href:"https://www.whatsapp.com/channel/0029VbC0VefDOQIUZc5qIa2D">WhatsApp Kanal</a>
             </CardContent>
           </div>
         </Card>
