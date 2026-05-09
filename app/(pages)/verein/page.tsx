@@ -68,13 +68,6 @@ const Verein = () => {
             <div className="flex flex-col items-center justify-baseline">
               <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
 
-              <h3 className="text-md mb-2"><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#109;&#101;&#108;&#97;&#110;&#105;&#101;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;">Melanie Messmer</a></h3>
-              <hr className="w-full" />
-              <p>Beisitzer</p>
-            </div>
-            <div className="flex flex-col items-center justify-baseline">
-              <Image className="w-[60%] mb-4 rounded-xl" src="/unknown_person.jpg" alt="Passbild" width={450} height={450} />
-
               <h3 className="text-md mb-2"><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#107;&#108;&#101;&#109;&#101;&#110;&#115;&#64;&#115;&#99;&#45;&#119;&#101;&#104;&#105;&#110;&#103;&#101;&#110;&#46;&#100;&#101;">Klemend Burkhard</a></h3>
               <hr className="w-full" />
               <p>Beisitzer</p>
