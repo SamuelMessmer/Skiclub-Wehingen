@@ -15,8 +15,11 @@ const Fossiliuslauf = () => {
             Hier finden Sie alle Infos zum
           </p>
           <h1 className="font-extrabold text-[52px] sm:text-8xl sm1 xl:text-9xl tracking-tighter mb-5 sm:mb-4 z-10">
-            Fossiliuslauf am 27.09.2026
+            Fossiliuslauf
           </h1>
+          <p className="text-orange-500 text-lg sm:text-2xl self-start ml-4 -mb-4 md:mb-1 md:self-auto">
+            am Sonntag, den 27.09.2026
+          </p>
         </div>
       </section>
 
@@ -40,9 +43,9 @@ const Fossiliuslauf = () => {
                   Für Erwachsene (ab 15 Jahren) gibt es die folgenden Läufe:
                   <br />
                   <b>
-                    <br />- Hauptlauf (11,2km)
-                    <br />- Jedermannlauf (6,0km)
-                    <br />- Nordic-Walking (7,8km)
+                    <br />- Hauptlauf 11,2 km
+                    <br />- Jedermannlauf 6,0 km
+                    <br />- Nordic-Walking 7,8 km
                   </b>
                 </CardContent>
                 <CardContent className="font-bold text-lg text-orange-500">
@@ -84,8 +87,10 @@ const Fossiliuslauf = () => {
                   Lauf für Jugendliche
                 </CardHeader>
                 <CardContent className="mb-2 sm:mb-0">
-                  <b>- Schülerlauf 1,5 km</b>
-                  <b>- Schülerlauf 3,0 km</b>
+                  <b>
+                    <br />- Schülerlauf 1,5 km
+                    <br />- Schülerlauf 3,0 km
+                  </b>
                 </CardContent>
                 <CardContent className="mb-14 sm:mb-0">
                   Der Schülerlauf startet um 10:00 Uhr und führt über eine
@@ -126,10 +131,8 @@ const Fossiliuslauf = () => {
                 </CardHeader>
                 <CardContent className="mb-2 sm:mb-0 text-white">
                   <b>
-                    <br />- Bambinilauf
-                  </b>
-                  <b>
-                    <br />- Kidslauf
+                    <br />- Bambinilauf 100 m
+                    <br />- Kidslauf 300 m
                   </b>
                 </CardContent>
                 <CardContent className="font-bold text-lg text-orange-500">
