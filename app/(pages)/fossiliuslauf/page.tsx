@@ -1,9 +1,9 @@
 "use client";
-import DynamicLinkList from "@/components/DynamicLinkList";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Image from "next/image";
 import React from "react";
 import HoverButton from "@/components/HoverButton";
+import Sprinter from "@/components/Sprinter";
 
 const Fossiliuslauf = () => {
   return (
@@ -162,17 +162,48 @@ const Fossiliuslauf = () => {
       {/* ERGEBNISS SECTION */}
       <section>
         <h1 className=" font-extrabold text-5xl sm:text-8xl sm1 xl:text-9xl tracking-tighter mb-5 sm:mb-4 z-10 md:mt-14  mx-8">
-          Die letzten Ergebnisse:
+          Die Ergebnisse:
         </h1>
         <div className="flex justify-end items-center lg:mx-14">
-          <Image
-            src="/laufen_gif.webp"
-            alt="Logo Picture"
-            width={1920}
-            height={1080}
-            className="hidden xl:block w-[550px] h-fit z-0"
-          />
-          <DynamicLinkList />
+          <Sprinter className="hidden xl:block w-[550px] h-fit z-0" />
+          <a
+            href="https://my.raceresult.com/385773/results#0_8AF0E5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mx-4 my-8 w-full max-w-xl"
+          >
+            <Card className="relative overflow-hidden bg-gradient-to-br from-sky-100 via-white to-orange-100 p-6 sm:p-10 rounded-2xl shadow-xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
+              <div className="absolute -top-16 -right-16 h-48 w-48 rounded-full bg-orange-500/20 blur-2xl" />
+              <div className="relative flex items-center gap-4 mb-6">
+                <Image
+                  src="/favicon-skiclub.png"
+                  alt="Logo Skiclub Wehingen"
+                  width={80}
+                  height={80}
+                  className="h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-white p-1 shadow-md"
+                />
+                <span className="text-3xl font-light text-slate-400">×</span>
+                <span className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                  <span className="text-slate-700">race</span>
+                  <span className="text-orange-500">|</span>
+                  <span className="text-slate-700">result</span>
+                </span>
+              </div>
+              <h2 className="relative font-bold text-3xl lg:text-4xl text-orange-500 mb-3">
+                Ergebnisse &amp; Urkunden
+              </h2>
+              <p className="relative text-lg text-slate-700 mb-8">
+                Alle Ergebnislisten des Fossiliuslaufs – vom Bambinilauf bis zum
+                Hauptlauf – finden Sie live und übersichtlich bei raceresult.
+              </p>
+              <span className="relative inline-flex items-center gap-3 rounded-full bg-orange-500 px-6 py-3 text-lg font-semibold text-white shadow-md transition-colors duration-300 group-hover:bg-slate-700">
+                Zu den Ergebnissen
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </span>
+            </Card>
+          </a>
         </div>
       </section>
 
