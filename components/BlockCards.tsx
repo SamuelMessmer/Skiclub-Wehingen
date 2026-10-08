@@ -121,7 +121,7 @@ const BlockCards = () => {
       </div>
 
       <div className="flex flex-col sticky top-24 bg-white">
-        <Card className="bg-[#EFF7FF] mb-0 mx-4 sm:px-5 lg:mx-20 xl:mx-20 flex flex-col items-center xl:flex-row xl:items-center animate-zoom zoom ">
+        <Card className="bg-[#EFF7FF] mb-24 mx-4 sm:px-5 lg:mx-20 xl:mx-20 flex flex-col items-center xl:flex-row xl:items-center animate-zoom zoom ">
           <Image
             src="/SkihuetteSommerAußen.jpg"
             alt="lift groß"
@@ -161,6 +161,49 @@ const BlockCards = () => {
           width={1920}
           height={1080}
           className="z-20 self-start rounded-xl shadow-lg h-[150px] w-auto sm:hidden mb-5 -mt-20 sm:-mt-80 mx-2 hover:scale-105 duration-150"
+        />
+      </div>
+
+      <div className="flex flex-col sticky top-10 bg-white">
+        <Card className="bg-orange-500 mb-0 mx-4 sm:px-5 lg:mx-20 xl:mx-20 flex flex-col items-center xl:flex-row xl:items-center animate-zoom zoom">
+          <div className="flex flex-col sm:text-center xl:text-left">
+            <CardHeader className="font-bold text-3xl lg:text-5xl ml-2 md:ml-0 text-white">
+              Unser neuer MTB-Trail
+              <p className="font-normal text-xl ml-0 text-white block">
+                Der erste Mountainbike Trail auf dem Heuberg
+              </p>
+            </CardHeader>
+            <CardContent className="text-lg text-white">
+              Während die Winter zunehmend schneeärmer werden, gehört
+              Mountainbiking zu den großen Trends im Breitensport. Mit dem Trail
+              verbinden wir unsere Tradition mit einem modernen, ganzjährigen
+              Sportangebot für Jung und Alt.
+            </CardContent>
+            <CardContent className="font-bold text-lg text-white">
+              1,4 km Streckenlänge &middot; 110 Tiefenmeter &middot; 3 Abschnitte
+            </CardContent>
+            <Link
+              href="/mtb-trail"
+              className="text-orange-500 bg-white px-3 py-2 rounded-md flex gap-2 items-center mb-20 sm:mb-4 self-end mr-8 hover:bg-gray-100 hover:scale-105 transition duration-200"
+            >
+              <p>Alles zum Trail</p>
+              <FaLongArrowAltRight />
+            </Link>
+          </div>
+          <Image
+            src="/mtb/trail-karte.png"
+            alt="Karte des MTB-Trails"
+            width={1600}
+            height={700}
+            className="hidden sm:block rounded-xl shadow-xl mt-12 md:my-5 md:mx-5 xl:my-5 sm:h-auto sm:w-[400px] xl:w-[560px]"
+          />
+        </Card>
+        <Image
+          src="/mtb/trail-karte.png"
+          alt="Karte des MTB-Trails klein"
+          width={1600}
+          height={700}
+          className="z-20 self-end rounded-xl shadow-lg h-[110px] w-auto sm:hidden mb-5 -mt-20 mx-2 hover:scale-105 duration-150"
         />
       </div>
     </div>
