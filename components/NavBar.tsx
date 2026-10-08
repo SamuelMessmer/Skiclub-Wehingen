@@ -87,6 +87,9 @@ const NavBar = () => {
                   <Link href="/fossiliuslauf" className="py-3 px-3" onClick={showHamburgerMenu}>
                     Fossiliuslauf
                   </Link>
+                  <Link href="/mtb-trail" className="py-3 px-3" onClick={showHamburgerMenu}>
+                    MTB-Trail
+                  </Link>
                   <Link href="/newsletter" className="py-3  px-3" onClick={showHamburgerMenu}>
                     Newsletter
                   </Link>
@@ -155,6 +158,12 @@ const NavBar = () => {
         <button className="hover:border-b-4 border-orange-500 duration-150hover:scale-150 duration-150">
           <Link href="/fossiliuslauf" className="py-8">
             Fossiliuslauf
+          </Link>
+        </button>
+
+        <button className="hover:border-b-4 border-orange-500 duration-150hover:scale-150 duration-150">
+          <Link href="/mtb-trail" className="py-8">
+            MTB-Trail
           </Link>
         </button>
 
